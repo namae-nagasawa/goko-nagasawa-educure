@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>質問・感想フォーム</title>
+<link rel="stylesheet" href="css_2.css">
+</head>
+<body>
+	<div class="question"><p>質問・感想フォーム</p></div>
+	
+	
+	<div class="back"><form action="#">
+		<div class="namae">氏名</div>
+			
+			<input type="text" name="name" placeholder="例：山田　花子" required>
+	
+			</form>
+			<div class="gender"><p>性別</p></div>
+			<input type="radio" name="sei" value="male" checked>男
+			<input type="radio" name="sei" value="female">女
+			
+			<div class="age">年齢</div>
+			
+			<select name="年齢">
+				<option value="teen"selected >10代 </option>
+				<option value="20代">20代</option>
+				<option value="30代">30代</option>
+				<option value="40代">40代</option>
+				<option value="40代">50代</option>
+			</select>
+		
+			<div class="watch">今後見てみたいレシピ</div>
+			
+		
+		
+		<label><input type="checkbox" name="food">和食</label>
+		<label><input type="checkbox" name="food">中華</label>
+		<label><input type="checkbox" name="food">洋食</label>
+		<label><input type="checkbox" name="food">イタリアン</label>
+		<label><input type="checkbox" name="food">スイーツ</label>
+		<label><input type="checkbox" name="food">その他</label>
+		
+	
+		<div class="comment">自由コメント欄</div>
+		
+		<textarea name="free"
+		placeholder="自由に意見を記述してください。"rows="5"cols="40"></textarea>
+		<p><input type="submit" value="送信">
+		<input type="submit" value="取り消し"></p>
+	
+		</div>
+				
+	
+
+</body>
+</html>

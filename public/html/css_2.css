@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.question{
+	font-size:30px;
+	text-align:center;
+}
+body{
+	background-image:url(bg_Argyle.jpg);
+	
+}
+label {
+   background-color: white;   
+   border: 1px solid;  
+   border-color:#696969;
+   border-radius: 9px;         
+   padding: 2px 6px 2px 2px;   
+   margin-bottom: 4px;         
+   
+   }
+   label:hover {
+ background-color:#696969;
+ color: honeydew;
+ 
+}
+.age{
+		font-size:20px;
+		
+		font-weight:600;
+}
+.namae{
+		font-size:20px;
+		
+		font-weight:600;
+
+}
+.gender{
+		font-size:20px;
+		
+		font-weight:600;
+}		
+
+.watch{
+		font-size:20px;
+		
+		font-weight:600;
+
+}
+.comment{
+		font-size:20px;
+		
+		font-weight:600;
+
+
+}
+.back{
+		width: 700px;
+		height:450px;
+		border:solid 1px;
+		border-color:#FFF0F5;
+		box-shadow: 5px 5px 5px #FFF0F5;
+		background-color:white;
+		border-radius: 10px;
+		text-align:center;
+		position: relative;
+		top: 10px;
+		left: 300px;
+	
+}

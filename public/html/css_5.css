@@ -1,0 +1,29 @@
+@charset "UTF-8";
+button:hover {
+ 		background-color:#FF00FF;
+		 color: white;
+
+}
+	
+ul{
+		display: flex;
+		list-style:none;
+	
+}
+ button{
+	
+		background-color:#0099FF;
+		color:white;
+		outline: none;
+		cursor: pointer;
+		border: none;
+		margin-right: 1px;
+	
+ }
+ ul{
+		background-color: white;
+		border: 1px solid;
+		border-radius: 3px;
+		padding: 10px;
+		border-right: none;
+ }

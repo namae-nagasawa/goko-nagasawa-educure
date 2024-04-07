@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body{
+	background-image:url(bg_Argyle.jpg);
+	
+}
+.curry{
+	text-align:center
+}
+	
+.zairyou{
+	color:red;
+}
+.table1 tr{
+	background-color: lemonchiffon
+	
+}
+.curry img{
+	border:double 5px #ff0000;
+}
+
+.table1 table{
+	border:solid 1px #ff0000;
+}
+.right{
+	display:flex;
+}
+.page{
+	padding-bottom: 50px;
+}
+.table1 caption{
+	color:red;
+	
+}
