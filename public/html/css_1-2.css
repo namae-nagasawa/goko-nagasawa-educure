@@ -10,10 +10,14 @@ body{
 .zairyou{
 	color:red;
 }
-.table1 tr{
+.table1 {
 	background-color: lemonchiffon
+	border  1px solid;
+	border-collapse:collapse;
+	
 	
 }
+
 .curry img{
 	border:double 5px #ff0000;
 }
@@ -31,3 +35,32 @@ body{
 	color:red;
 	
 }
+.table,th,td,tr{
+	
+	border: 1px solid red;
+	background-color: #FFFF99;
+	
+	
+	
+}
+table th{
+		text-align: left;
+		
+	
+}
+.make{
+	font-size:25px;
+	font-weight:bold;
+	
+}
+.one{
+	font-size:25px;
+	font-weight:bold;
+	
+}
+.cream{
+	font-size:30px;
+	font-weight:bold;
+	}
+	
+	
