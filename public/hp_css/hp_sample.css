@@ -3,16 +3,13 @@
 	display:flex;
 	text-align:left;
 	height:60px;
-	
-}
+	}
 .play{
 	display:flex;
 	text-align:left;
 	height:60px;
-	
-}
+	}
 li{
-	
 	overflow:hidden;
 	background-color:#EEEEEE;
 	border: 1px solid #DDDDDD;
@@ -24,10 +21,6 @@ li{
 	width:120px;
 	margin-top: 10px;
 	margin:auto;
-	
-	
-	
-	
 	}
 ul{
 	list-style:none;
@@ -38,101 +31,69 @@ ul{
 	box-sizing:border;
 	height:40px;
 	line-height:45px;
-	
-	
-	
-}
+	}
 
 #menu li a:hover{
 	background-color:white;
 	color:black;
 	margin:auto;
 	padding:0;
-	display:block;
-	
-	
-	
-	
-	
+	display:block;	
 }
 #menu li a{
 	color:#0066FF;
 	display:block;
 	text-decoration:none;
-	height:40px;
-	
-	
+	height:40px;	
 }
 
 #menu{
 	margin-left:100px;
-	
-	
-	
-	
-	
 }
 .first img{
 	margin-left:140px;
 }
 .image{
 	margin-left:140px;
-	
 }
 .foot{
 	margin-left:140px;
 }
 .visual{
-	
 	width:1090px;
 	margin-top:10px;
-	
 }
 
 #home{
 	border-radius:10px 0 0  10px;
 	height:40px;
-	
-	
 }
 .know{
 	height:20px
-	
-	
 }
 
 .items{
-		
 	height:20px
-	
 }
 .service{
-	
-	
 	height:20px
-	
 }
 
 .company{
-	
 	height:20px
 }
 .form{
-	
 	height:20px
 }
 
 #blank{
-	
 	border-radius:0 10px 10px 0;
 	height:20px;
 	width:360px;
 	height:40px;
-
 }
 
 .table{
-	
 	border: 1px solid #DDDDDD;
 	padding:10px;
 	border-radius:15px;
@@ -141,12 +102,10 @@ ul{
 	margin-left:20px;
 }
 .main{
-	
 	display:inline-block;
 	display:flex;
 	margin-top:20px;
 	height:325px;
-	
 }
 .sample{
 	width:550px;
