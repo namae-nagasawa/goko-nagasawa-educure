@@ -11,11 +11,14 @@
 	<%
 	int[]num = new int[2];
 	
-	num[0] = 2735;
-	num[1] = 1377;
+	num[0]= 2735;
+	num[1]= 1377;
 	
+	int w =num[0];
 	num[0]=num[1];
-	num[1]=2735;
+	
+	num[1]=w;
+	
 	
 	out.println("num[0]=" + num[0]);
 	out.println("num[1]=" + num[1]);
