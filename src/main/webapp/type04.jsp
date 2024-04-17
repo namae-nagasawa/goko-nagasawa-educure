@@ -12,8 +12,9 @@
 int num1 = 1;
 int num2 = 2;
 
-num1=num2;
-num2=1;
+int w =num1;
+num1 = num2;
+num2=w;
 
 out.println("num1の値は"+ num1 + "です。");
 out.println("num2の値は"+ num2 + "です。");
