@@ -9,9 +9,14 @@
 </head>
 <body>
 	<%
-	char num =97;
 	
-	out.println("ch = " + num);
+	int num =97;
+	
+	char c;
+	
+	c =(char)num;
+	
+	out.println("ch = " + c);
 	%>
 </body>
 </html>
