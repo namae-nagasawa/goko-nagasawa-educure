@@ -19,12 +19,12 @@ String name = request.getParameter("name");
 <div>
 
 	<form action="takeda.jsp">
-	<select >
-		<option  name="date" value="第一次試合">第一次試合
-		<option  name="date" value="第二次試合">第二次試合
-		<option  name="date" value="第三次試合">第三次試合
+	<select name="date">
+		<option  value="第一次試合">第一次試合
+		<option  value="第二次試合">第二次試合
+		<option  value="第三次試合">第三次試合
 	</select>
-		<button type="submit" value="one">武田を呼ぶ</button>
+		<button type="submit" value="date">武田を呼ぶ</button>
 	</form>
 	
 	

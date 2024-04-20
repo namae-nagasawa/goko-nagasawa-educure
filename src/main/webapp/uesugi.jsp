@@ -2,10 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
 String name = request.getParameter("name");
-
-
+String date = request.getParameter("date");
 %>
 
 
@@ -17,23 +15,18 @@ String name = request.getParameter("name");
 </head>
 <body>
 <div>
-
 	<form action="takeda.jsp">
 		<input type="radio" name="date" value="第一次試合">第一次試合
 		<input type="radio" name="date" value="第二次試合">第二次試合
 		<input type="radio" name="date" value="第三次試合">第三次試合
 		<button type="submit" value="one">武田を呼ぶ</button>
 	</form>
-	
-	
 </div>
-<div>
-	
-</div>
+
 <div>
 	<p><%= name %>を受け取った</p>
 </div>
-<div>
+
 <div>
 	<form action="takeda.jsp">
 		<input type="text" name="name">
