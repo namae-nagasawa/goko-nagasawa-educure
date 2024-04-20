@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+String param1 = request.getParameter("param1");
+String param2 = request.getParameter("param2");
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+	<p>
+	<%
+	
+	if(param1 != null && param2!=null){
+		if(param1.equalsIgnoreCase(param2)){
+			out.println("入力値が一致しました");
+		}else{
+			out.println("入力値が一致しません");
+		}
+	}
+	
+	%>
+	</p>
+		<form action="stringCompare02.jsp" method="post">
+			<input type="text" name="param1">
+			<input type="text" name="param2">
+			<button type="submit">チェック</button>
+	</form>
+</div>
+</body>
+</html>
