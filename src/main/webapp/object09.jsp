@@ -10,7 +10,7 @@
 <body>
 <%
 String no ="256";
-boolean bol =no.length() == 3;
+boolean bol =no.matches("256");
 out.println(bol);
 
 %>
