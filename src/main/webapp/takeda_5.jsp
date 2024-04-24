@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
 String date = request.getParameter("date");
 %>
 
@@ -15,6 +14,11 @@ String date = request.getParameter("date");
 <body>
 
 <form action="uesugi_5.jsp">
+<select name ="name" >
+		<option  value="第一次試合">第一次試合
+		<option  value="第二次試合">第二次試合
+		<option  value="第三次試合">第三次試合
+	</select>
 	<button >上杉を呼ぶ</button>
 </form>
 
