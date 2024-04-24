@@ -21,8 +21,7 @@ if(param != null){
 <%
 	if(num >=60 && num % 2 ==0){
 		out.println(num);
-	}else{
-		//表示しない
+
 	}
 %>
 </p>
