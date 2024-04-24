@@ -25,6 +25,12 @@ String name = request.getParameter("name");
 	
 	
 </div>
+<div>
+	
+	<p><%= name %>が行われた</p>
+	
+</div>
+
 
 </body>
 </html>
