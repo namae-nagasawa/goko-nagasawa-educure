@@ -10,7 +10,7 @@
 <body>
 <%
 String no ="256";
-boolean bol =no.matches("256");
+boolean bol =no.matches("^[0-9]{3}$");
 out.println(bol);
 
 %>
