@@ -24,8 +24,6 @@ if(param != null){
 					out.println("合格です");
 				}else if(num < 60){
 						out.println("不合格です");
-				}else{
-					
 				}
 			%>
 		</p>

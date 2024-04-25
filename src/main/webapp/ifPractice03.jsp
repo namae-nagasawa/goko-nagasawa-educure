@@ -30,8 +30,6 @@ if(param != null){
 					out.println("D評価です");
 				}else if(num < 20){
 					out.println("E評価です");
-				}else{
-					//表示しない
 				}
 			%>
 		</p>

@@ -22,8 +22,6 @@ if(param != null){
 			<%
 				if(num >= 60){
 					out.println("合格です");
-				}else{
-					//表示しない
 				}
 			%>
 		</p>
