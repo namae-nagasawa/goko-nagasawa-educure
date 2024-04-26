@@ -20,7 +20,7 @@ if(param != null){
 	<div>
 		<p>
 			<%
-				if(num >=80 && num <100){
+				if(num >=80 && num <=100){
 					out.println("A評価です");
 				}else if(num < 80 && num >=60){
 					out.println("B評価です");
