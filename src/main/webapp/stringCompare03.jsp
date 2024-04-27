@@ -15,7 +15,6 @@ String param2 = request.getParameter("param2");
 	<div>
 	<p>
 	<%
-	
 	if(param1 != null && param2!=null){
 		if(param1.trim().equals(param2.trim())){
 			out.println("入力値が一致しました");
@@ -23,7 +22,6 @@ String param2 = request.getParameter("param2");
 			out.println("入力値が一致しません");
 		}
 	}
-	
 	%>
 	</p>
 		<form action="stringCompare03.jsp" method="post">
