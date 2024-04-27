@@ -13,7 +13,6 @@ String param = request.getParameter("param");
 <div>
 <p>
 <%
-
 if(param != null){
 	switch(param){
 	case "0":
@@ -30,10 +29,8 @@ if(param != null){
 	default:
 		out.println("赤、青、黄のいずれかを選択してください。");
 		break;
-
 	}
 }
-	
 %>
 </p>
 	<form action="switchPractice01.jsp" method="post">

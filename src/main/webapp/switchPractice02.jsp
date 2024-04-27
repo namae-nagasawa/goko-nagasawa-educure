@@ -13,7 +13,6 @@ String param = request.getParameter("param");
 <div>
 <p>
 <%
-
 if(param != null){
 	switch(param){
 	case "0":
@@ -30,10 +29,8 @@ if(param != null){
 	case "3":
 			out.println("東京まで田町 浜松町 新橋 有楽町 を通過します");
 			break;
-	
 	}
 }
-	
 %>
 </p>
 	<p>現在地を選択してください。</p>
