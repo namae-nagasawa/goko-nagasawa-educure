@@ -8,20 +8,19 @@
 </head>
 <body>
 <%
-for(int i =0; i<5; i++){
-	for(int j = 0; j<=i; j ++){
-		
+for (int i = 0; i < 5; i++) {
+	for (int j = 0; j <= i; j++) {
+
 		out.print("*");
 	}
-		out.println("<br> ");
+	out.println("<br> ");
 
-	}
-for(int i =0;i <4; i++){
-	for(int j =0; j<4-i; j++){
+}
+for (int i = 0; i < 4; i++) {
+	for (int j = 0; j < 4 - i; j++) {
 		out.print("*");
 	}
 	out.println("<br>");
-}
 %>
 </body>
 </html>

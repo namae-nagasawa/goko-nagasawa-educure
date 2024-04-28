@@ -8,13 +8,11 @@
 </head>
 <body>
 <%
-
-for(int year = 1800; year <= 2000; year++){
-	if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)){
-		out.println(year+"年はうるう年");
+for (int year = 1800; year <= 2000; year++) {
+	if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
+		out.println(year + "年はうるう年");
 	}
 }
-
 %>
 </body>
 </html>

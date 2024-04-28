@@ -8,15 +8,12 @@
 </head>
 <body>
 <%
-for(int i =0; i<4; i++){
-	for(int j = 0; j<=i; j ++){
+for (int i = 0; i < 4; i++) {
+	for (int j = 0; j <= i; j++) {
 		out.print("*");
 	}
-		out.println(" ");
-
-	}
-
-
+	out.println(" ");
+}
 %>
 </body>
 </html>

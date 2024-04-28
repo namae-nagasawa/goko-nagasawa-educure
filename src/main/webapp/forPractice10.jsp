@@ -8,25 +8,94 @@
 </head>
 <body>
 <%
-for(int i =0; i<5; i++){
-	for(int j = 0; j<=i; j ++){
-		
+for (int i = 0; i <= 9; i++) {
+	if (i == 0 || i == 9) {
 		out.print("*");
+	} else {
+		out.print(" ");
 	}
-		out.println("<br> ");
+}
+out.print("<br>");
 
-	}
-for(int i =0;i <4; i++){
-	for(int j =0; j<4-i; j++){
+for (int i = 0; i <= 9; i++) {
+	if (i == 0 || i == 1 || i == 8 || i == 9) {
 		out.print("*");
+	} else {
+		out.print(" ");
 	}
-	out.println("<br>");
+}
+
+out.print("<br>");
+
+for (int i = 0; i <= 9; i++) {
+	if ((i >= 0 && i <= 2) || (i >= 7 && i <= 9)) {
+		out.print("*");
+	} else {
+		out.print(" ");
+	}
+}
+
+out.print("<br>");
+
+for (int i = 0; i <= 9; i++) {
+	if ((i >= 0 && i <= 3) || (i >= 6 && i <= 9)) {
+		out.print("*");
+	} else {
+		out.print(" ");
 	}
 
+}
+out.print("<br>");
 
-	
+for (int i = 0; i <= 9; i++) {
+	if ((i >= 0 && i <= 4) || (i >= 5 && i <= 9)) {
+		out.print("*");
+	} else {
+		out.print(" ");
+	}
+}
 
+out.print("<br>");
 
+for (int i = 0; i <= 9; i++) {
+	if ((i >= 0 && i <= 3) || (i >= 6 && i <= 9)) {
+		out.print("*");
+	} else {
+		out.print(" ");
+	}
+
+}
+out.print("<br>");
+
+for (int i = 0; i <= 9; i++) {
+	if ((i >= 0 && i <= 2) || (i >= 7 && i <= 9)) {
+		out.print("*");
+	} else {
+		out.print(" ");
+	}
+
+}
+out.print("<br>");
+
+for (int i = 0; i <= 9; i++) {
+	if ((i >= 0 && i <= 1) || (i >= 8 && i <= 9)) {
+		out.print("*");
+	} else {
+		out.print(" ");
+	}
+
+}
+out.print("<br>");
+
+for (int i = 0; i <= 9; i++) {
+	if (i == 0 || i == 9) {
+		out.print("*");
+	} else {
+		out.print(" ");
+	}
+}
+
+out.print("<br>");
 %>
 </body>
 </html>
