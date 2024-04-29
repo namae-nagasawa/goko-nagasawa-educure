@@ -15,7 +15,7 @@ for (int i = 0; i <= 9; i++) {
 		out.print(" ");
 	}
 }
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if (i == 0 || i == 1 || i == 8 || i == 9) {
@@ -25,7 +25,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 }
 
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if ((i >= 0 && i <= 2) || (i >= 7 && i <= 9)) {
@@ -35,7 +35,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 }
 
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if ((i >= 0 && i <= 3) || (i >= 6 && i <= 9)) {
@@ -45,7 +45,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 
 }
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if ((i >= 0 && i <= 4) || (i >= 5 && i <= 9)) {
@@ -55,7 +55,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 }
 
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if ((i >= 0 && i <= 3) || (i >= 6 && i <= 9)) {
@@ -65,7 +65,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 
 }
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if ((i >= 0 && i <= 2) || (i >= 7 && i <= 9)) {
@@ -75,7 +75,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 
 }
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if ((i >= 0 && i <= 1) || (i >= 8 && i <= 9)) {
@@ -85,7 +85,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 
 }
-out.print("<br>");
+out.println(" ");
 
 for (int i = 0; i <= 9; i++) {
 	if (i == 0 || i == 9) {
@@ -95,7 +95,7 @@ for (int i = 0; i <= 9; i++) {
 	}
 }
 
-out.print("<br>");
+out.println(" ");
 %>
 </body>
 </html>
