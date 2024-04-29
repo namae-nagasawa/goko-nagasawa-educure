@@ -8,11 +8,15 @@
 </head>
 <body>
 <%
+int count = 0;
+
 for (int year = 1800; year <= 2000; year++) {
 	if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
-		out.println(year + "年はうるう年");
+		count++;
+
 	}
 }
+out.println(count);
 %>
 </body>
 </html>
