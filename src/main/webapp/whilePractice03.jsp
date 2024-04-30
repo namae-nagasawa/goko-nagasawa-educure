@@ -13,7 +13,6 @@ while(i<10){
 	out.print(i);
 	i++;
 }
-
 %>
 </body>
 </html>

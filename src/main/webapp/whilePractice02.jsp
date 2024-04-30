@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <%
 int i =0;
 while(i<5){
