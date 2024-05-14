@@ -14,7 +14,7 @@ public class Test {
 
 		MethodPractice.hyouzi("s", 3);
 
-		MethodPractice.aisatsu("HelloWorld!");
+		MethodPractice.aisatsu();
 
 		String mozi=MethodPractice.change(2.0);
 		System.out.println(mozi);
@@ -32,7 +32,7 @@ public class Test {
 		char two =MethodPractice.moji('a','i');
 		System.out.println(two);
 
-		MethodPractice.judge(5);
+		MethodPractice.judge(7000);
 
 		boolean hantei=MethodPractice.month(2000);
 		System.out.println(hantei);

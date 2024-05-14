@@ -18,8 +18,8 @@ public class MethodPractice {
 		}
 		System.out.println("");
 	}
-	public static void aisatsu(String c) {
-		System.out.println(c);
+	public static void aisatsu() {
+		System.out.println("HelloWorld");
 	}
 	public static String change(double d) {
 		return String.valueOf(d);
@@ -49,13 +49,12 @@ public class MethodPractice {
 			System.out.println(15);
 		}else if(1000<=i && i <=4999){
 			System.out.println(30);
-		}else if(5000<=i){
+		}else{
 			System.out.println(50);
 		}
 
 	}
 	public static boolean month(int p) {
-
 		if(p % 400 == 0 || (p % 100 != 0 && p % 4 == 0)){
 			return true;
 		}else {
