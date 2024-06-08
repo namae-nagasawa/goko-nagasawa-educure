@@ -5,8 +5,8 @@ public class Dice {
 	public int number = 1;
 
 	public static int Cast() {
-		int randomNum1 = ((int) (Math.random() * 6) + 1);
-		return randomNum1;
+		return ((int) (Math.random() * 6) + 1);
+		
 	}
 
 	public int see() {

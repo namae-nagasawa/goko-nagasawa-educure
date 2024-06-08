@@ -8,8 +8,8 @@ public class DiceTest {
 
 		System.out.println(num1.see());
 
-		for (i = 0; i < 29; i++) {
-			System.out.println(num1.Cast());
+		for (i = 0; i <= 30; i++) {
+			System.out.println(Dice.Cast());
 
 		}
 
