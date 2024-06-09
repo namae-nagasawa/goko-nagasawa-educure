@@ -5,11 +5,13 @@ public class CheatDice extends Dice {
 
 		int i = 1;
 
-		for (i = 1; i <= 30; i++) {
+		Dice num1 = new Dice();
+
+		for (i = 1; i <= 36; i++) {
 			if (i % 6 == 0) {
-				System.out.println(6);
+				System.out.println(num1.see());
 			} else {
-				System.out.println(Cast());
+				System.out.println(num1.cast());
 			}
 		}
 
