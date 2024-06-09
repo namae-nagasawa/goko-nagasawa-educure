@@ -7,6 +7,7 @@ public class CheatDice extends Dice {
 
 		Dice num1 = new Dice();
 
+			
 		for (i = 1; i <= 36; i++) {
 			if (i % 6 == 0) {
 				System.out.println(num1.see());
