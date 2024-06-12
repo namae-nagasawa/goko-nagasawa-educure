@@ -15,11 +15,11 @@ public class CheatDice extends Dice {
 		if (number == 0) {
 			number=1;;
 			return number;
-		} else if (number % 6 == 0) {
-			number++;
+		} else if (num % 6 == 0) {
+			num++;
 			return six;
 		} else {
-			number++;
+			num++;
 			return cast();
 		}
 	}
