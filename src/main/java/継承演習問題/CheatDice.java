@@ -1,20 +1,27 @@
 package 継承演習問題;
 
 public class CheatDice extends Dice {
-	public static void main(String[] args) {
 
-		int i = 1;
+	//int number;
+	//int num;
+	int six = 6;
 
-		Dice num1 = new Dice();
+	//public int cast() {
+	//	num = ((int) (Math.random() * 6 + 1));
+	//return num;
+	//}
 
-			
-		for (i = 1; i <= 36; i++) {
-			if (i % 6 == 0) {
-				System.out.println(num1.see());
-			} else {
-				System.out.println(num1.cast());
-			}
+	public int see() {
+		if (number == 0) {
+			number=1;;
+			return number;
+		} else if (number % 6 == 0) {
+			number++;
+			return six;
+		} else {
+			number++;
+			return cast();
 		}
-
 	}
+
 }

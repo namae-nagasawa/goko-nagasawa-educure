@@ -1,16 +1,13 @@
 package 継承演習問題;
 
-public class DiceTest {
+public class DiceTest extends Dice {
 
 	public static void main(String[] args) {
-		int i = 0;
 
-		Dice num1 = new Dice();
+		CheatDice  num1 = new CheatDice();
 
-		System.out.println(num1.see());
-
-		for (i = 0; i <= 30; i++) {
-			System.out.println(num1.cast());
+		for (int num = 0; num <= 30; num++) {
+			System.out.println(num1.see());
 
 		}
 
