@@ -2,26 +2,21 @@ package 継承演習問題;
 
 public class CheatDice extends Dice {
 
+	int kaisu;
 	//int number;
-	//int num;
-	int six = 6;
 
-	//public int cast() {
-	//	num = ((int) (Math.random() * 6 + 1));
-	//return num;
-	//}
+	@Override
+	public int cast() {
+		kaisu++;
+		if (kaisu % 6 == 0) {
 
-	public int see() {
-		if (number == 0) {
-			number=1;;
+			number = 6;
 			return number;
-		} else if (num % 6 == 0) {
-			num++;
-			return six;
 		} else {
-			num++;
-			return cast();
+			number = ((int) (Math.random() * 6 + 1));
+			return number;
 		}
+
 	}
 
 }

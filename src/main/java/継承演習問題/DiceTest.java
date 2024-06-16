@@ -4,12 +4,16 @@ public class DiceTest extends Dice {
 
 	public static void main(String[] args) {
 
-		CheatDice  num1 = new CheatDice();
+		Dice num1 = new Dice();
+		CheatDice num2 = new CheatDice();
 
-		for (int num = 0; num <= 30; num++) {
-			System.out.println(num1.see());
+		System.out.println(num1.see());
+
+		for (int i = 1; i <= 30; i++) {
+			
+			System.out.println(i + "回目");
+			System.out.println(num2.cast());
 
 		}
-
 	}
 }

@@ -2,21 +2,18 @@ package 継承演習問題;
 
 public class Dice {
 
-	int number;
-	int num;
+	int number = 1;
+	int kaisu;
 
 	public int cast() {
-		num = ((int) (Math.random() * 6 + 1));
-		return num;
+
+		return number = ((int) (Math.random() * 6 + 1));
+
 	}
 
 	public int see() {
-		if (number == 0) {
-			number++;
-			return number;
 
-		} else {
-			return cast();
-		}
+		return number;
+
 	}
 }

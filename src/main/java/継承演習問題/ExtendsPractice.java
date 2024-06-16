@@ -14,7 +14,6 @@ public class ExtendsPractice {
 
 	@Override
 	public String toString() {
-
 		return "この単元は" + this.content + "が扱われます。LessonIDは" + this.id + "です。";
 
 	}
