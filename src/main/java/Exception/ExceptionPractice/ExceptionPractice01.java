@@ -2,21 +2,17 @@ package Exception.ExceptionPractice;
 
 public class ExceptionPractice01 {
 	public static void main(String[] args) {
-		try {
+		String[] eng = { "abc", "edf"};
 
-			Integer.parseInt("abc");
+		for (String english : eng) {
 
-		} catch (NumberFormatException a) {
+			try {
+				Integer.parseInt(english);
 
-			System.out.println("NumberFormatException Integer.parseInt abc" + a);
+			} catch (NumberFormatException e) {
+				System.out.println("NumberFormatException Integer.parseInt \""+ english +"\"");
 
-		}
-		try {
-			Integer.parseInt("def");
-		} catch (NumberFormatException d) {
-
-			System.out.println("NumberFormatException Integer.parseInt def" + d);
-
+			}
 		}
 	}
 }
