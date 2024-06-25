@@ -15,8 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 public class StartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -41,30 +39,35 @@ public class StartServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String pass = request.getParameter("pass");
 		String error = request.getParameter("error");
-		error = null;
 
 		if (pass == null || pass.isEmpty()) {
-			error ="暗証番号を入力してください";
-			response.sendRedirect("index.jsp");
+			error = "暗証番号を入力してください";
 			request.setAttribute("error", error);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+
 		} else {
 			try {
 				int passInt = Integer.parseInt(pass);
 				if (passInt == 1234) {
+					
+					PetSessionInfo petsessioninfo = new PetSessionInfo();
+					session.setAttribute("petsessioninfo", petsessioninfo);
 					response.sendRedirect("petList.jsp");
 				} else {
 					error = "暗証番号が違います";
-					response.sendRedirect("index.jsp");
+
 					request.setAttribute("error", error);
+					request.getRequestDispatcher("index.jsp").forward(request, response);
 				}
 			} catch (NumberFormatException e) {
 				error = "数値を入力してください";
-				response.sendRedirect("index.jsp");
+
 				request.setAttribute("error", error);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		}
 		request.setAttribute("error", error);
-		
+
 		//request.setAttribute("error", error);
 
 		//		String error="暗証番号を入力してください";
