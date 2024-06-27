@@ -1,25 +1,19 @@
 package jp.co.sample.pet;
 
 public class Cat extends Animal {
-	public String name;
-	public int age;
-	public int height;
-	public int weight;
-	public String breed;
-	public String walkLocation;
-	public String favoriteitem;
+	
 
 	public Cat() {
 
 	}
 
 	public Cat(String string, int i, int j, int k, String string2, String string3) {
-		this.name = name;
-		super.age = age;
-		super.height = height;
-		super.weight = weight;
-		super.breed = breed;
-		super.favoriteitem = favoriteitem;
+		super.name = string;
+		super.age = i;
+		super.height = j;
+		super.weight = k;
+		super.breed = string2;
+		super.favoriteitem = string3;
 	}
 
 	public boolean isFat() {

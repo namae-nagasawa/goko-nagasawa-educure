@@ -19,6 +19,7 @@ public class StartServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
+
 	public StartServlet() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -52,18 +53,27 @@ public class StartServlet extends HttpServlet {
 				if (passInt == 1234) {
 
 					PetSessionInfo petsessioninfo = new PetSessionInfo();
+
 					HttpSession session = request.getSession();
-					
-
-					petsessioninfo.getPetList().get("dog");
-					petsessioninfo.getPetList().get("cat");
-
-					session.setAttribute("dog", petsessioninfo);
-					session.setAttribute("cat", petsessioninfo);
 					session.setAttribute("petsessioninfo", petsessioninfo);
-
-					//request.setAttribute("dog",petsessioninfo);
-					//request.setAttribute("cat",petsessioninfo);
+					
+			session.getAttribute(petList.get(1);
+//
+//					HashMap<String, Pet> petList = PetSessionInfo.getPetList();
+//					Dog dog = (Dog) petList.get("dog");
+//
+//					Cat cat = (Cat) petList.get("cat");
+//
+//					PetSessionInfo.getPetList().put("dog", dog);
+//					PetSessionInfo.getPetList().put("cat", cat);
+//					session.setAttribute("dog", dog);
+//					session.setAttribute("cat", cat);
+//
+//					//session.setAttribute("dog", petsessioninfo);
+//					//session.setAttribute("cat", petsessioninfo);
+//
+//					//request.setAttribute("dog",petsessioninfo);
+//					//request.setAttribute("cat",petsessioninfo);
 
 					request.getRequestDispatcher("petList.jsp").forward(request, response);
 

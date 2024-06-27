@@ -6,12 +6,13 @@ public class Dog extends Animal {
 	}
 
 	public Dog(String string, int i, int j, int k, String string2, String string3) {
-		super.name = name;
-		super.age = age;
-		super.height = height;
-		super.weight = weight;
-		super.breed = breed;
-		super.walkLocation = walkLocation;
+		super.name = string;
+		super.age = i;
+		super.height = j;
+		super.weight = k;
+		super.breed = string2;
+		super.walkLocation = string3;
+		
 
 	}
 
@@ -37,5 +38,8 @@ public class Dog extends Animal {
 	public boolean ifFat() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
+	}
+	public Dog(String string) {
+		name="ポチ";
 	}
 }

@@ -17,29 +17,29 @@
 
     <table class="petInfoTable">
       <tr>
-        <th>名前：ポチ</th>
-        <td>あああ</td>
+        <th>名前：${SessionScope.dogName}</th>
+        <td></td>
       </tr>
       <tr>
-        <th>年齢：５</th>
-        <td>111</td>
+        <th>年齢：</th>
+        <td></td>
       </tr>
       <tr>
-        <th>体長：５５</th>
-        <td>222</td>
+        <th>体長：</th>
+        <td></td>
       </tr>
       <tr>
-        <th>体重：２０</th>
-        <td>333 <span class="error">※太り気味です</span>
+        <th>体重：</th>
+        <td><span class="error">※太り気味です</span>
         </td>
       </tr>
       <tr>
-        <th>種別：柴犬</th>
-        <td>いいい</td>
+        <th>種別：</th>
+        <td></td>
       </tr>
       <tr>
-        <th>散歩場所：代々木公園</th>
-        <td>ううう</td>
+        <th>散歩場所:</th>
+        <td></td>
       </tr>
     </table>
   </div>

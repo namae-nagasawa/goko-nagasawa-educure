@@ -2,7 +2,7 @@ package jp.co.sample.pet;
 
 public interface Pet {
 	
-	public String getName();
+	public String getName() ;
 	
 	public void setName(String name);
 	

@@ -28,11 +28,10 @@ public class PetListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String dog = request.getParameter("dog");
-		String cat = request.getParameter("cat");
 		
-		request.getRequestDispatcher("petinfo.jsp").forward(request, response);
+		
+		
+		request.getRequestDispatcher("petInfo.jsp").forward(request, response);
 	}
 
 	/**
