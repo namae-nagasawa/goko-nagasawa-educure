@@ -2,6 +2,8 @@
   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%String dog = (String) request.getAttribute("dog"); %>
+<%String cat = (String) request.getAttribute("cat"); %>
 
 <!DOCTYPE html>
 <html>
@@ -15,9 +17,9 @@
 
   <div class="info">
     <h2>ペット一覧</h2>
-    <form action="petListServlet">
-      <button class="btn" type="submit" name="btn" value="dog">ポチ</button>
-      <button class="btn" type="submit" name="btn" value="cat">タマ</button>
+    <form action="PetListServlet" method="get">
+      <button class="btn" type="submit" name="btn" value="dog">${requestScope.dog}</button>
+      <button class="btn" type="submit" name="btn" value="cat">${requestScope.cat}</button>
     </form>
   </div>
 

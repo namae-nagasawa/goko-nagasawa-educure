@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class StartServlet
@@ -49,10 +50,23 @@ public class StartServlet extends HttpServlet {
 			try {
 				int passInt = Integer.parseInt(pass);
 				if (passInt == 1234) {
-					
+
 					PetSessionInfo petsessioninfo = new PetSessionInfo();
+					HttpSession session = request.getSession();
+					
+
+					petsessioninfo.getPetList().get("dog");
+					petsessioninfo.getPetList().get("cat");
+
+					session.setAttribute("dog", petsessioninfo);
+					session.setAttribute("cat", petsessioninfo);
 					session.setAttribute("petsessioninfo", petsessioninfo);
-					response.sendRedirect("petList.jsp");
+
+					//request.setAttribute("dog",petsessioninfo);
+					//request.setAttribute("cat",petsessioninfo);
+
+					request.getRequestDispatcher("petList.jsp").forward(request, response);
+
 				} else {
 					error = "暗証番号が違います";
 

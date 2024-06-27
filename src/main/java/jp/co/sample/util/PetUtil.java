@@ -1,14 +1,14 @@
 package jp.co.sample.util;
 
 
-    //        if (isDog(pet)) {
-    //            return "散歩場所";
-    //        } else if (isCat(pet)) {package jp.co.sample.util;
+            if (isDog(pet)) {
+                return "散歩場所";
+            } else if (isCat(pet)) {package jp.co.sample.util;
 
 //todo: 必要なクラスがそろえばコメントアウトを戻せば良い。
-//import jp.co.sample.pet.Cat;
-//import jp.co.sample.pet.Dog;
-//import jp.co.sample.pet.Pet;
+import jp.co.sample.pet.Cat;
+import jp.co.sample.pet.Dog;
+import jp.co.sample.pet.Pet;
 
 /**
  * Utilityメソッドをまとめたクラス

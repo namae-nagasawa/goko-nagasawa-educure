@@ -25,6 +25,7 @@ public class PetSessionInfo {
 		Dog dog = new Dog("ポチ", 5, 55, 20, "柴犬", "代々木公園");
 		Cat cat = new Cat("タマ", 3, 40, 4, "アメリカンショートヘア", "猫じゃらし");
 		//
+	 
 		petList.put("dog", dog);
 		petList.put("cat", cat);
 	}
