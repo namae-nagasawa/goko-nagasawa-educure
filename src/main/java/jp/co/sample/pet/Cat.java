@@ -1,7 +1,6 @@
 package jp.co.sample.pet;
 
 public class Cat extends Animal {
-	
 
 	public Cat() {
 
@@ -24,8 +23,8 @@ public class Cat extends Animal {
 	}
 
 	public String getFavoriteItem() {
-		favoriteitem = "猫じゃらし";
-		return favoriteitem;
+		return null;
+		
 	}
 
 	public void setFavoriteItem(String item) {
@@ -37,4 +36,6 @@ public class Cat extends Animal {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
+
+	
 }

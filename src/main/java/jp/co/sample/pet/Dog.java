@@ -36,10 +36,8 @@ public class Dog extends Animal {
 
 	@Override
 	public boolean ifFat() {
-		// TODO 自動生成されたメソッド・スタブ
+	
 		return false;
 	}
-	public Dog(String string) {
-		name="ポチ";
-	}
+	
 }

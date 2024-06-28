@@ -18,7 +18,7 @@ import jp.co.sample.pet.Pet;
 public class PetSessionInfo {
 	//todo: このクラスの処理は作成済。必要なクラスがそろえばコメントアウトを戻せば良い。
 
-	private HashMap<String, Pet> petList;
+	private static HashMap<String, Pet> petList;
 
 	public PetSessionInfo() {
 		petList = new HashMap<String, Pet>();
@@ -34,15 +34,15 @@ public class PetSessionInfo {
 	//	//    /**
 	//	//     * ペット情報の一覧
 	//	//     */
-		public void setPetList(HashMap<String, Pet> _petList) {
-			petList = _petList;
-		}
+		//public void setPetList(HashMap<String, Pet> _petList) {
+		//	petList = _petList;
+		//}
 	
 	//	//
 	//	//    /**
 	//	//     * ペット情報の一覧設定
 	//	//     */
-	//	public static HashMap<String, Pet> getPetList() {
-	//		return petList;
-	//	}
+	public static HashMap<String, Pet> getPetList() {
+			return petList;
+		}
 }
