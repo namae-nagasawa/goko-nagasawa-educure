@@ -3,7 +3,6 @@ package jp.co.sample.servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,8 +35,10 @@ public class PetListServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String btn = request.getParameter("btn");
+		String btn1 = request.getParameter("btn1");
 
 		request.setAttribute("btn", btn);
+		request.setAttribute("btn1", btn1);
 
 		PetSessionInfo petsessioninfo = new PetSessionInfo();
 
@@ -74,7 +75,7 @@ public class PetListServlet extends HttpServlet {
 		//		// TODO Auto-generated method stub
 
 		//
-		//		PetSessionInfo pet1 = (PetSessionInfo)session.getAttribute("petsessioninfo");
+		
 
 	}
 }

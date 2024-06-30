@@ -17,7 +17,7 @@
   <div class="info">
     <h2>ペット一覧</h2>
     <form action="PetListServlet" method="get">
-      <button class="btn" type="submit" name="btn" value="dog">${dogName}</button>
+      <button class="btn" type="submit" name="btn1" value="dog">${dogName}</button>
       <button class="btn" type="submit" name="btn" value="cat">${catName}</button>
    		
     </form>
