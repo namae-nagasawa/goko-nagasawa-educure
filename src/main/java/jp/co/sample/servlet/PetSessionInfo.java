@@ -7,11 +7,6 @@ import jp.co.sample.pet.Cat;
 import jp.co.sample.pet.Dog;
 import jp.co.sample.pet.Pet;
 
-//todo: このクラスの処理は作成済。必要なクラスがそろえばコメントアウトを戻せば良い。
-//import jp.co.sample.pet.Cat;
-//import jp.co.sample.pet.Dog;
-//import jp.co.sample.pet.Pet;
-
 /**
 * ペット情報の一覧をHashMapで保持しておくためのクラス
 */
@@ -34,15 +29,15 @@ public class PetSessionInfo {
 	//	//    /**
 	//	//     * ペット情報の一覧
 	//	//     */
-		//public void setPetList(HashMap<String, Pet> _petList) {
-		//	petList = _petList;
-		//}
-	
+	//public void setPetList(HashMap<String, Pet> _petList) {
+	//	petList = _petList;
+	//}
+
 	//	//
 	//	//    /**
 	//	//     * ペット情報の一覧設定
 	//	//     */
 	public static HashMap<String, Pet> getPetList() {
-			return petList;
-		}
+		return petList;
+	}
 }

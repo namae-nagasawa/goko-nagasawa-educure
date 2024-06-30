@@ -33,7 +33,7 @@ public abstract class Animal implements Pet {
 
 	@Override
 	public int getAge() {
-		return 0;
+		return age;
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public abstract class Animal implements Pet {
 
 	@Override
 	public int getHeight() {
-		return 0;
+		return height;
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public abstract class Animal implements Pet {
 
 	@Override
 	public int getWeight() {
-		return 0;
+		return weight;
 	}
 
 	@Override

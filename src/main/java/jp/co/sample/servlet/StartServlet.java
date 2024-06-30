@@ -53,6 +53,12 @@ public class StartServlet extends HttpServlet {
 		} else {
 			try {
 				int passInt = Integer.parseInt(pass);
+				if (passInt != 1234) {
+					error = "暗証番号が違います";
+
+					request.setAttribute("error", error);
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+				}
 				if (passInt == 1234) {
 
 					PetSessionInfo petsessioninfo = new PetSessionInfo();
@@ -71,11 +77,6 @@ public class StartServlet extends HttpServlet {
 
 						request.getRequestDispatcher("petList.jsp").forward(request, response);
 
-					} else {
-						error = "暗証番号が違います";
-
-						request.setAttribute("error", error);
-						request.getRequestDispatcher("index.jsp").forward(request, response);
 					}
 				}
 			} catch (NumberFormatException e) {
@@ -85,7 +86,6 @@ public class StartServlet extends HttpServlet {
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 		}
-
 
 		response.setContentType("text/html; charset=UTF-8");
 

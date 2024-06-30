@@ -1,7 +1,9 @@
 package jp.co.sample.pet;
 
 public class Dog extends Animal {
-
+//デバックで確認したところcatとdog両方にwalklocation=nullとfavoriteitem=nullが入っていたので
+	//Animalクラスにwalklocationとfavoriteitemフィールドを書くのはやめといたほうがいいかも
+	//訂正するならcat,dogクラスのフィールドにそれぞれwalklocationやfavoriteitemのふぃーるどをついかする？
 	public Dog() {
 	}
 
@@ -27,7 +29,7 @@ public class Dog extends Animal {
 
 	public String getWalkingPlace() {
 
-		return "代々木公園";
+		return walkLocation;
 	}
 
 	public void setWalkingPlace() {

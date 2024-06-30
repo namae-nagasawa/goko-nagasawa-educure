@@ -23,7 +23,7 @@ public class Cat extends Animal {
 	}
 
 	public String getFavoriteItem() {
-		return null;
+		return favoriteitem;
 		
 	}
 
