@@ -1,9 +1,9 @@
 package jp.co.sample.pet;
 
 public class Dog extends Animal {
-//デバックで確認したところcatとdog両方にwalklocation=nullとfavoriteitem=nullが入っていたので
-	//Animalクラスにwalklocationとfavoriteitemフィールドを書くのはやめといたほうがいいかも
-	//訂正するならcat,dogクラスのフィールドにそれぞれwalklocationやfavoriteitemのふぃーるどをついかする？
+
+	public String walkLocation;
+
 	public Dog() {
 	}
 
@@ -13,18 +13,12 @@ public class Dog extends Animal {
 		super.height = j;
 		super.weight = k;
 		super.breed = string2;
-		super.walkLocation = string3;
-		
+		this.walkLocation = string3;
 
 	}
 
 	public boolean isFat() {
-		if (weight > 15) {
-
-			return true;
-		} else {
-			return false;
-		}
+		return weight > 15;
 	}
 
 	public String getWalkingPlace() {
@@ -38,8 +32,8 @@ public class Dog extends Animal {
 
 	@Override
 	public boolean ifFat() {
-	
+
 		return false;
 	}
-	
+
 }

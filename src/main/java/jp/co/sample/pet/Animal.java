@@ -7,8 +7,7 @@ public abstract class Animal implements Pet {
 	public int height;
 	public int weight;
 	public String breed;
-	public String walkLocation;
-	public String favoriteitem;
+
 	
 	public abstract boolean ifFat() ;
 

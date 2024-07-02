@@ -36,14 +36,17 @@ public class PetListServlet extends HttpServlet {
 
 		String btn = request.getParameter("btn");
 		String btn1 = request.getParameter("btn1");
+		String error = request.getParameter("error");
 
 		request.setAttribute("btn", btn);
 		request.setAttribute("btn1", btn1);
+		request.setAttribute("error", error);
 
 		PetSessionInfo petsessioninfo = new PetSessionInfo();
 
 		HttpSession session = request.getSession();
 		session.setAttribute("petsessioninfo", petsessioninfo);
+		request.setAttribute("petsessioninfo", petsessioninfo);
 		Dog dog = (Dog) PetSessionInfo.getPetList().get("dog");
 		Cat cat = (Cat) PetSessionInfo.getPetList().get("cat");
 

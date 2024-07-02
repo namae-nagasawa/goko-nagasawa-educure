@@ -2,6 +2,8 @@ package jp.co.sample.pet;
 
 public class Cat extends Animal {
 
+	public String favoriteitem;
+
 	public Cat() {
 
 	}
@@ -12,19 +14,16 @@ public class Cat extends Animal {
 		super.height = j;
 		super.weight = k;
 		super.breed = string2;
-		super.favoriteitem = string3;
+		this.favoriteitem = string3;
 	}
 
 	public boolean isFat() {
-		if (weight > 5) {
-			return true;
-		}
-		return false;
+		return weight > 5;
 	}
 
 	public String getFavoriteItem() {
 		return favoriteitem;
-		
+
 	}
 
 	public void setFavoriteItem(String item) {
@@ -37,5 +36,4 @@ public class Cat extends Animal {
 		return false;
 	}
 
-	
 }

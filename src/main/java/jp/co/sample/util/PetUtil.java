@@ -133,12 +133,6 @@ public class PetUtil {
 	 * @param pet
 	 * @return
 	 */
-	// todo: ※発展課題用。このメソッドの処理は作成済。必要なクラスがそろえばコメントアウトを戻せば良い。
-	public static boolean isReptile(Pet pet) {
-		if (pet instanceof Reptile) {
-			return true;
-		} else {
-			return false;
-		}
+
 	}
-}
+

@@ -3,18 +3,19 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%String error = (String) request.getAttribute("error");%>
+
+<%
+String error = "太り気味です";
+%>
 <%
 String btn = request.getParameter("btn");
 %>
-<%
-String btn1 = request.getParameter("btn1");
-%>
-<%String dog = (String) session.getAttribute("dogName");%>
-<%String cat = (String) session.getAttribute("catName");%>
-<%
-error = "太り気味です";
-%>
+<%String btn1 = request.getParameter("btn1");%>
+<%@ page import="jp.co.sample.pet.Dog"%>
+<%@ page import="jp.co.sample.pet.Cat"%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,77 +30,79 @@ error = "太り気味です";
 
 		<table class="petInfoTable">
 			<tr>
-				<th>名前： <c:choose>
+				<th>名前：</th>
+				<td><c:choose>
 						<c:when test="${requestScope.btn==sessionScope.dog}">
 				${sessionScope.dogName}</c:when>
 
 						<c:otherwise>${sessionScope.catName}</c:otherwise>
 
-					</c:choose>
-
-
-				</th>
-				<td></td>
+					</c:choose></td>
 			</tr>
 			<tr>
-				<th>年齢： <c:choose>
+				<th>年齢：</th>
+
+				<td><c:choose>
 						<c:when test="${requestScope.btn==sessionScope.dog }">
 				${sessionScope.dogAge}</c:when>
 
 						<c:otherwise>${sessionScope.catAge}</c:otherwise>
 
-					</c:choose></th>
-				<td></td>
+					</c:choose></td>
 			</tr>
 			<tr>
-				<th>体長： <c:choose>
+				<th>体長：</th>
+				<td><c:choose>
 						<c:when test="${requestScope.btn==sessionScope.dog }">
 				${sessionScope.dogHeight}</c:when>
 
 						<c:otherwise>${sessionScope.catHeight}</c:otherwise>
 
-					</c:choose>
-
-
-
-
-				</th>
-				<td></td>
+					</c:choose></td>
 			</tr>
 			<tr>
-				<th>体重：<c:choose>
-						<c:when test="${requestScope.btn==sessionScope.dog }">
-				${sessionScope.dogWeight}</c:when>
+				<th>体重：</th>
+				<td><c:choose>
+						<c:when test="${requestScope.btn == sessionScope.dog}">
+                            ${sessionScope.dogWeight}
+                            <c:if test="${dog.isFat()}">
+								<span class="error">太り気味です</span>
+							</c:if>
+						</c:when>
+						<c:otherwise>
+                            ${sessionScope.catWeight}
+                            <c:if test="${cat.isFat()}">
+								<span class="error">太り気味です</span>
+							</c:if>
+						</c:otherwise>
+					</c:choose></td>
 
-						<c:otherwise>${sessionScope.catWeight}</c:otherwise>
 
-					</c:choose></th>
-				<td><span class="error">
-				
-				${ error}
-				
-				
-				</span></td>
 			</tr>
 			<tr>
-				<th>種別：<c:choose>
-						<c:when test="${requestScope.btn==sessionScope.dog }">
-				${sessionScope.dogType}</c:when>
-
-						<c:otherwise>${sessionScope.catType}</c:otherwise>
-
-					</c:choose></th>
-				<td></td>
+				<th>種別：</th>
+				<td><c:choose>
+						<c:when test="${requestScope.btn == sessionScope.dog}">
+                ${sessionScope.dogType}
+            </c:when>
+						<c:otherwise>
+                ${sessionScope.catType}
+            </c:otherwise>
+					</c:choose></td>
 			</tr>
 			<tr>
 				<th><c:choose>
-						<c:when test="${requestScope.btn==sessionScope.dog }">散歩場所：
-				${sessionScope.dogWalkingPlace}</c:when>
-
-						<c:otherwise>お気に入り道具：${sessionScope.catFavoriteItem}</c:otherwise>
-
+						<c:when test="${requestScope.btn == sessionScope.dog}">散歩場所：</c:when>
+						<c:otherwise>お気に入り道具：</c:otherwise>
 					</c:choose></th>
-				<td></td>
+				<td><c:choose>
+						<c:when test="${requestScope.btn == sessionScope.dog}">
+                ${sessionScope.dogWalkingPlace}
+            </c:when>
+						<c:otherwise>
+                ${sessionScope.catFavoriteItem}
+            </c:otherwise>
+					</c:choose></td>
 			</tr>
 		</table>
 	</div>
