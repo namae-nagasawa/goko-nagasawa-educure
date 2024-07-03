@@ -3,13 +3,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
-<%
-String error = "太り気味です";
-%>
-<%
-String btn = request.getParameter("btn");
-%>
+<%String btn = request.getParameter("btn");%>
 <%String btn1 = request.getParameter("btn1");%>
 <%@ page import="jp.co.sample.pet.Dog"%>
 <%@ page import="jp.co.sample.pet.Cat"%>

@@ -24,16 +24,7 @@ public class PetSessionInfo {
 		petList.put("dog", dog);
 		petList.put("cat", cat);
 	}
-	//
-	//	//
-	//	//    /**
-	//	//     * ペット情報の一覧
-	//	//     */
-	//public void setPetList(HashMap<String, Pet> _petList) {
-	//	petList = _petList;
-	//}
 
-	//	//
 	//	//    /**
 	//	//     * ペット情報の一覧設定
 	//	//     */

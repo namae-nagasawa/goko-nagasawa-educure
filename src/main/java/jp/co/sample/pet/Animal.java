@@ -8,8 +8,7 @@ public abstract class Animal implements Pet {
 	public int weight;
 	public String breed;
 
-	
-	public abstract boolean ifFat() ;
+	public abstract boolean ifFat();
 
 	public String getType() {
 		return breed;
@@ -57,5 +56,4 @@ public abstract class Animal implements Pet {
 	public void setWeight(int weight) {
 	}
 
-	
 }

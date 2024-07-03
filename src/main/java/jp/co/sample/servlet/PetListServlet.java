@@ -78,7 +78,6 @@ public class PetListServlet extends HttpServlet {
 		//		// TODO Auto-generated method stub
 
 		//
-		
 
 	}
 }

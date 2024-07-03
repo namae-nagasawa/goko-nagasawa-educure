@@ -2,7 +2,7 @@ package jp.co.sample.pet;
 
 public class Dog extends Animal {
 
-	public String walkLocation;
+	private String walkLocation;
 
 	public Dog() {
 	}
@@ -18,7 +18,12 @@ public class Dog extends Animal {
 	}
 
 	public boolean isFat() {
-		return weight > 15;
+		if (weight > 15) {
+
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public String getWalkingPlace() {
@@ -26,14 +31,14 @@ public class Dog extends Animal {
 		return walkLocation;
 	}
 
-	public void setWalkingPlace() {
+	public void setWalkingPlace(String place) {
 
 	}
 
 	@Override
 	public boolean ifFat() {
 
-		return false;
+		return true;
 	}
 
 }
