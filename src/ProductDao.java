@@ -95,23 +95,41 @@ public class ProductDao extends DBconnection {
 		PreparedStatement statement = null;
 
 		try {
+			//データベースへの接続を取得する
+			//値にnullか0が入っているときは出力するだけのコード
 			Connection con = getConnection();
-			if (product.getProductId() == 0) {
-				System.out.println("IDの値の確認に失敗しました");
-			} else if (product.getProductName() == null) {
-				System.out.println("NAMEの値の確認に失敗しました");
-			} else if (product.getProductPrice() == 0) {
-				System.out.println("PRICEの値の確認に失敗しました");
-				
+			if (product.getProductId() == 0 || product.getProductName() == null || product.getProductPrice() == 0) {
+				String sql = "SELECT * FROM products WHERE id IS NOT NULL AND name IS NOT NULL AND price IS NOT NULL";
+
+				statement = con.prepareStatement(sql);
+				ResultSet rs = statement.executeQuery();
+
+				while (rs.next()) {
+					Product dto = new Product();
+					dto.setProductId(rs.getInt("id"));
+					dto.setProductName(rs.getString("name"));
+					dto.setProductPrice(rs.getInt("price"));
+					resultList.add(dto);
+					System.out.println("nullがないデータを取得しました");
+
+				}
+
 			} else {
+
+				//引数として与えられた情報productがそれぞれnullじゃない場合にのみ処理される
+				//if (product.getProductId() != 0 && product.getProductName() != null && product.getProductPrice() != 0) {
+				//SQL文を用意して変数sqlに代入
 				String sql = "SELECT id, name, price FROM products WHERE id=? AND name=? AND price=?";
+
 				statement = con.prepareStatement(sql);
 
 				statement.setInt(1, product.getProductId());
 				statement.setString(2, product.getProductName());
 				statement.setInt(3, product.getProductPrice());
+				//SQL文を実行し、結果を取得する
 				ResultSet rs = statement.executeQuery();
 
+				//rsにデータがある限り取得し続ける
 				while (rs.next()) {
 					Product dto = new Product();
 					dto.setProductId(rs.getInt("id"));
@@ -122,13 +140,15 @@ public class ProductDao extends DBconnection {
 
 				}
 
-				statement.close();
-				con.close();
 			}
+			statement.close();
+			con.close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
+		//戻り値の型に整形して結果リストを返す(resultList)
 		return resultList;
 
 	}
