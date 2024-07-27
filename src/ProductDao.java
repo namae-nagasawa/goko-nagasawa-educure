@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class ProductDao extends DBconnection {
 			//ルールとして必ずstatementとconを閉めてあげる。
 			statement.close();
 			con.close();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 
 		}
@@ -57,7 +58,7 @@ public class ProductDao extends DBconnection {
 
 			statement.close();
 			con.close();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 
 		}
@@ -83,7 +84,7 @@ public class ProductDao extends DBconnection {
 
 			statement.close();
 			con.close();
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 
 		}
@@ -99,7 +100,7 @@ public class ProductDao extends DBconnection {
 			//値にnullか0が入っているときは出力するだけのコード
 			Connection con = getConnection();
 			if (product.getProductId() == 0 || product.getProductName() == null || product.getProductPrice() == 0) {
-				String sql = "SELECT * FROM products WHERE id IS NOT NULL AND name IS NOT NULL AND price IS NOT NULL";
+				String sql = "SELECT * FROM products ";
 
 				statement = con.prepareStatement(sql);
 				ResultSet rs = statement.executeQuery();
@@ -110,7 +111,7 @@ public class ProductDao extends DBconnection {
 					dto.setProductName(rs.getString("name"));
 					dto.setProductPrice(rs.getInt("price"));
 					resultList.add(dto);
-					System.out.println("nullがないデータを取得しました");
+					System.out.println("データを取得しました");
 
 				}
 
@@ -144,7 +145,7 @@ public class ProductDao extends DBconnection {
 			statement.close();
 			con.close();
 
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 

@@ -13,11 +13,8 @@ public class DAOmain {
 			dto.setProductName("土星の土地"); // 更新後の商品名
 			dto.setProductPrice(5000000); // 更新後の価格
 
-			//list.add((Product) dao.find(dto));
 			List<Product> products = (List<Product>) dao.find(dto); // 型キャストが必要な場合
 			list.addAll(products);
-
-			//dao.find(dto);
 
 			//productDaoクラスのインスタンス生成
 
