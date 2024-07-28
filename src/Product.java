@@ -15,7 +15,7 @@ public class Product {
 	}
 
 	public String getProductName() {
-		return name;
+		return name; 
 	}
 
 	public void setProductName(String name) {

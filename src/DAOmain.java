@@ -18,7 +18,7 @@ public class DAOmain {
 
 			//productDaoクラスのインスタンス生成
 
-			//productクラスのセッターに定数を設定
+			//productクラスのセッターに定数を設定 
 
 			dao.register(dto);
 			dao.update(dto);

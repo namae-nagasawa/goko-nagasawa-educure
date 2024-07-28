@@ -83,7 +83,7 @@ public class ProductDao extends DBconnection {
 			}
 
 			statement.close();
-			con.close();
+			con.close(); 
 		} catch (SQLException e) {
 			e.printStackTrace();
 
@@ -100,7 +100,7 @@ public class ProductDao extends DBconnection {
 			//値にnullか0が入っているときは出力するだけのコード
 			Connection con = getConnection();
 			if (product.getProductId() == 0 || product.getProductName() == null || product.getProductPrice() == 0) {
-				String sql = "SELECT * FROM products ";
+				String sql = "SELECT * FROM products";
 
 				statement = con.prepareStatement(sql);
 				ResultSet rs = statement.executeQuery();
@@ -118,7 +118,6 @@ public class ProductDao extends DBconnection {
 			} else {
 
 				//引数として与えられた情報productがそれぞれnullじゃない場合にのみ処理される
-				//if (product.getProductId() != 0 && product.getProductName() != null && product.getProductPrice() != 0) {
 				//SQL文を用意して変数sqlに代入
 				String sql = "SELECT id, name, price FROM products WHERE id=? AND name=? AND price=?";
 
