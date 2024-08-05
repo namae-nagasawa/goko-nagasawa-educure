@@ -3,33 +3,33 @@ package dto;
 
 public class DTOEEclass {
 
-	private int id;
-	private String name;
-	private int price;
+	private int productId;
+	private String productName;
+	private int productPrice;
 
 	public int getProductId() {
-		return id;
+		return productId;
 	}
 
-	public void setProductId(int id) {
-		this.id = id;
+	public void setProductId(int productId) {
+		this.productId = productId;
 
 	}
 
 	public String getProductName() {
-		return name;
+		return productName;
 	}
 
-	public void setProductName(String name) {
-		this.name = name;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 	public int getProductPrice() {
-		return price;
+		return productPrice;
 	}
 
-	public void setProductPrice(int price) {
-		this.price = price;
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
 	}
 
 }
