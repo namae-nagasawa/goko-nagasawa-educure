@@ -16,7 +16,7 @@
 		id <input type="text" name="id"><br>
 		name<input type="text" name="name"><br>
 		price<input type="text" name="price">
-		<button type="submit">送信</button>
+		<br><button type="submit">送信</button>
 	</form>
 	
 	<table border="1">

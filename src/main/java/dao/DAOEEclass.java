@@ -44,7 +44,7 @@ public class DAOEEclass extends DBConnected {
 			    System.err.println("Error Code: " + e.getErrorCode());  // エラーコードを出力
 			    System.err.println("Message: " + e.getMessage());  // エラーメッセージを出力
 			
-
+		
 		}
 		return resultList;
 	}
