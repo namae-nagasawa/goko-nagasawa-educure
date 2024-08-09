@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DBConnected {
 	
 
-	private static final String URL = "jdbc:postgresql://localhost:5432/dbconnection";
+	private static final String URL = "jdbc:postgresql:dbconnection";
 	private static final String USER = "hogeuser";
 	private static final String PASSWORD = "hoge";
 
@@ -16,9 +16,11 @@ public class DBConnected {
 	 * データベースへ接続するためのメソッド
 	 * @return
 	 * @throws SQLException
+	 * @throws ClassNotFoundException 
 	 */
-	public static Connection getConnection() throws SQLException {
+	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		System.out.println("Connecting to database: URL=" + URL + ", USER=" + USER);//test
+		Class.forName("org.postgresql.Driver");
 		return DriverManager.getConnection(URL, USER, PASSWORD);
 	}
 }

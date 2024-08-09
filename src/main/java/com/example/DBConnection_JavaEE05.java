@@ -1,3 +1,4 @@
+
 package com.example;
 
 import java.io.IOException;
@@ -15,16 +16,16 @@ import dao.DAOEEclass;
 import dto.DTOEEclass;
 
 /**
- * Servlet implementation class DBConnection_JavaEE01
+ * Servlet implementation class DBConnection_JavaEE05
  */
-@WebServlet("/DBConnection_JavaEE01")
-public class DBConnection_JavaEE01 extends HttpServlet {
+@WebServlet("/DBConnection_JavaEE05")
+public class DBConnection_JavaEE05 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public DBConnection_JavaEE01() {
+	public DBConnection_JavaEE05() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -35,6 +36,7 @@ public class DBConnection_JavaEE01 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -43,9 +45,11 @@ public class DBConnection_JavaEE01 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		System.out.println("doPostが呼ばれました"); // Test
+
+		System.out.println("doPostが呼び出されました"); // Test
 
 		List<DTOEEclass> resultList = new ArrayList<>();
 		DAOEEclass dao = new DAOEEclass();
@@ -75,53 +79,48 @@ public class DBConnection_JavaEE01 extends HttpServlet {
 			System.out.println("priceを変換しました" + priceParam); // test
 
 			if ("send".equals(btn)) {
-				if (idParam != null || nameParam==null || priceParam ==null) {
-					System.out.println("検索ボタンが押されました");
-					resultList = dao.selectByCriteria(id, nameParam, price);
-					System.out.println("検索の値をセットしました");
+				System.out.println("検索ボタンが押されました");
+				resultList = dao.selectByCriteria(id, nameParam, price);
+				System.out.println("検索の値をセットしました");
+
+				// ParamUtil.isNullOrEmpty(idParam)) {
+			} else if ("upins".equals(btn)) {//ボタンの値がupinsが大枠の前提条件で、①②の条件に入る
+				if (id == null) {
+					// 新規登録処理
+					if (nameParam != null && !nameParam.isEmpty() && price > 0) {//idが空の場合は登録
+						dao.insertByCriteria(nameParam, price);
+						System.out.println("登録の値をセットしました");
+					}
+				} else {
+					// 更新処理　		id!=null が隠れているが上の条件式でid==nullを指定し、それ以外の条件なので書かなくてもよい
+					if (nameParam != null && !nameParam.isEmpty() && price > 0) {//idに何かしら入力値があれば更新処理DAOでidチェックしてるからここではこれだけの条件式でいい
+						dao.updateByCriteria(id, nameParam, price);
+						System.out.println("更新の値をセットしました");
+					}
+
+				}
+
+			} else if ("delete".equals(btn)) {
+				if (idParam != null && !idParam.isEmpty()) {
+					System.out.println("削除ボタンが押されました");
+					resultList = dao.deleteByCriteria(id);
+					System.out.println("削除の値をセットしました");
 				}
 			}
-			System.out.println("ResultList size: " + resultList.size());//test
-		} catch (NumberFormatException e) {
-			System.out.println("NumberFormatException: " + e.getMessage());//test
-			// id または price の変換エラー処理
-			e.printStackTrace();
+
+			System.out.println("結果行は " + resultList.size()); // Test
 		} catch (SQLException e) {
-			System.out.println("SQLException: " + e.getMessage());//test
+			System.out.println("SQLExceptionが起きました" + e.getMessage());
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			System.out.println("IllegalArgumentExceptionが起きました" + e.getMessage());
 			e.printStackTrace();
 		}
 
 		request.setAttribute("resultList", resultList);
-		request.getRequestDispatcher("/dbconnection_javaee01.jsp").forward(request, response);
-
+		request.getRequestDispatcher("/dbconnection_javaee05.jsp").forward(request, response);
 	}
 
 }
-//		int id = Integer.parseInt(request.getParameter("id"));
-//		String name = request.getParameter("name");
-//		int price = Integer.parseInt(request.getParameter("price"));
-//		DAOEEclass dao = new DAOEEclass();
-//
-//		List<DTOEEclass> resultList = null;
-//
-//		try {
-//			if (id == 101 && name.equals("鉛筆") && price == 50) {
-//				resultList = dao.selectOne();
-//			} else if (id == 102 && name.equals("消しゴム") && price == 100) {
-//				resultList = dao.selectTwo();
-//			} else if (id == 103 && name.equals("地球儀") && price == 5000) {
-//				resultList = dao.selectThree();
-//			} else {
-//				// 条件に合致しない場合の処理
-//				resultList = new ArrayList<>(); // 空のリストを返す
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//
-//		}
-//
-//		request.setAttribute("resultList", resultList);
-//		request.getRequestDispatcher("/dbconnection_javaee01.jsp").forward(request, response);

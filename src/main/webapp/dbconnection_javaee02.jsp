@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -11,12 +11,13 @@
 <body>
 	<!--  検索条件の入力と検索結果の表示用のjsp-->
 
-	<p>検索条件を入力してください</p>
-	<form action="/JavaEEproject/DBConnection_JavaEE01" method="post">
+	<p>検索条件、または、登録情報（name,price)を入力してください</p>
+	<form action="/JavaEEproject/DBConnection_JavaEE02" method="post">
 		id <input type="text" name="id"><br> name<input
 			type="text" name="name"><br> price<input type="text"
 			name="price"> <br>
 		<button type="submit" name="btn1" value="send">検索</button>
+		<button type="submit" name="btn1" value="register">登録</button>
 	</form>
 
 	<table border="1">
