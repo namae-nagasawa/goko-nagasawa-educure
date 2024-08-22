@@ -12,7 +12,7 @@
 
   <p class="error">${requestScope.erroridpass}</p>
 
-  <form action="LoginServlet" method="post">
+  <form action="login" method="post">
     <fieldset>
       <div>
         <label>ID</label>

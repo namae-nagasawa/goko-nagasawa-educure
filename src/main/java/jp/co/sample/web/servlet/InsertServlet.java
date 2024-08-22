@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import dao.dao1Class;
 import dto.dto1Class;
 
-@WebServlet("/InsertServlet")
+@WebServlet({"/InsertServlet","/insert"})
 public class InsertServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -37,6 +37,7 @@ public class InsertServlet extends HttpServlet {
         String ertel = "";
         String erpass = "";
         String errormsg = "";
+        String roleIdname;
 
         HttpSession session = request.getSession();
 
@@ -47,9 +48,9 @@ public class InsertServlet extends HttpServlet {
             List<dto1Class> resultList = dao.selectId(loginId);
             
             if (roleId.equals("1")) {
-                roleId = "管理者";
+                roleIdname = "管理者";
             } else {
-                roleId = "一般";
+                roleIdname = "一般";
             }
             
             if (loginId == null || loginId.trim().isEmpty()) {
@@ -82,6 +83,7 @@ public class InsertServlet extends HttpServlet {
                 session.setAttribute("tel", tel);
                 session.setAttribute("pass", pass);
                 session.setAttribute("role_id", roleId);
+                session.setAttribute("roleIdname",roleIdname);  
                 
                 request.getRequestDispatcher("insertConfirm.jsp").forward(request, response);
             } else {

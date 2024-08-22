@@ -21,7 +21,7 @@ public class dao1Class extends DBConnection {
 	private static final String SQL_ROLE_ALL_NAME_AND_TEL = "SELECT user_info.login_id, user_info.password, user_info.user_id, user_info.user_name, user_info.telephone, role.role_name FROM user_info LEFT JOIN role ON user_info.role_id=role.role_id WHERE user_info.user_name = ? AND user_info.telephone = ?";
 
 	private static final String SQL_SELECT_ID = "SELECT * FROM user_info WHERE login_id =?";
-	private static final String SQL_INSERT = "INSERT INTO user_info (login_id,user_name,telephone,password,role_id) VALUES(?,?,?,?,?)";
+	private static final String SQL_INSERT = "INSERT INTO user_info (login_id,user_name,telephone,role_id,password) VALUES(?,?,?,?,?)";
 
 	public List<dto1Class> login(String login_id, String password)
 			throws SQLException, ClassNotFoundException {
@@ -267,52 +267,23 @@ public class dao1Class extends DBConnection {
 
 	}
 
-
-	public List<dto1Class> insert(String login_id, String user_name, String telephone, String password, int role_id)
+	public void insert(String login_id, String user_name, String telephone, int role_id, String password)
 			throws SQLException, ClassNotFoundException {
-		List<dto1Class> resultList = new ArrayList<>();
 
-		try (Connection con = getConnection(); //テーブル接続のためのgetConnectionメソッドの呼び出し
-				PreparedStatement statement = con.prepareStatement(SQL_INSERT)) {//SQL文を実行するために処理速度を上げるためにpreparedで用意する
+		try (Connection con = getConnection();
+				PreparedStatement pstmt = con.prepareStatement(SQL_INSERT)) {
 
-			statement.setString(1, login_id);//プレースホルダーにメソッドの引数をセット
-			statement.setString(2, user_name);
-			statement.setString(3, telephone);
-			statement.setString(4, password);
-			statement.setInt(5, role_id);
+			pstmt.setString(1, login_id);
+			pstmt.setString(2, user_name);
+			pstmt.setString(3, telephone);
+			pstmt.setInt(4, role_id);
+			pstmt.setString(5, password);
 
-			System.out.println("引数をセット " + SQL_LOGIN);//test
+			// SQL 文を実行
+			pstmt.executeUpdate();
 
-			try (ResultSet rs = statement.executeQuery()) {
-				if (rs.next()) {
-					dto1Class dto = new dto1Class();
-					dto.setLoginId(rs.getString("login_id"));
-					System.out.println("ログインIDセット");
-
-					dto.setUserName(rs.getString("user_name"));
-					System.out.println("ユーザー名セット");
-
-					dto.setTelephone(rs.getString("telephone"));
-					System.out.println("電話番号セット");
-
-					dto.setPassword(rs.getString("password"));
-					System.out.println("パスワードセット");
-
-					dto.setRoleId(rs.getInt("role_id"));
-					System.out.println("ロールIDセット");
-
-					System.out.println("データをINSERTしました");
-
-					resultList.add(dto);
-
-				}
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-
-			return resultList;//ここで入力されたlogin_idとpasswordは入ってるはず？
+			System.out.println("データを挿入しました: ");
 		}
-
 	}
+
 }

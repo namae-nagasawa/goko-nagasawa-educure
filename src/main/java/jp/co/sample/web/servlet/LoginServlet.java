@@ -16,7 +16,7 @@ import dto.dto1Class;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet({"/LoginServlet","/login"})
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -67,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 				int role_id=dto.getRoleId();
 
 				session.setAttribute("role_id", role_id);
-				session.setAttribute("userName", userName);
+				session.setAttribute("loginName", userName);
 				session.setAttribute("role", dao.role());
 
 

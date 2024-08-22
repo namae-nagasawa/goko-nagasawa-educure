@@ -17,7 +17,7 @@
 
   <p class="error">${requestScope.errormsg}</p>
 
-  <form action="SelectServlet" method="get">
+  <form action="select" method="get">
     <fieldset>
       <div>
         <label>名前</label>

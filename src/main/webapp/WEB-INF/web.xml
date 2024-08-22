@@ -17,12 +17,12 @@
 	</welcome-file-list>
 
 	<!-- Servlet Definitions -->
-	<servlet>
+<!--  	<servlet>
 		<servlet-name>loginservlet</servlet-name>
 		<servlet-class>jp.co.sample.web.servlet.LoginServlet</servlet-class>
 	</servlet>
 
-	<servlet-mapping>
+  	<servlet-mapping>
 		<servlet-name>loginservlet</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
@@ -56,6 +56,17 @@
 		<servlet-name>insertservlet</servlet-name>
 		<url-pattern>/insert</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>insertconfirmservlet</servlet-name>
+		<servlet-class>jp.co.sample.web.servlet.InsertConfirmServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>insertconfirmservlet</servlet-name>
+		<url-pattern>/insertConfirm</url-pattern>
+	</servlet-mapping>
+-->
 
 	<!-- Character Encoding Filter -->
 	<filter>

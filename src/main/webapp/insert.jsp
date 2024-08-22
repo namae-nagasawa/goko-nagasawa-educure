@@ -15,7 +15,7 @@
 
     <p class="error">${requestScope.errormsg}</p>
 
-    <form action="InsertServlet" method="post">
+    <form action="insert" method="post">
         <fieldset class="label-60">
             <div>
                 <label class="required">ID</label> <input type="text" name="loginId">

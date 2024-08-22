@@ -15,7 +15,7 @@ import dto.dto1Class;
 /**
  * Servlet implementation class SelectServlet
  */
-@WebServlet("/SelectServlet")
+@WebServlet({"/SelectServlet","/select"})
 public class SelectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -10,7 +10,7 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-	<p>実行者：${sessionScope.userName}</p><!-- xss対策 -->
+	<p>実行者：${sessionScope.loginName}</p><!-- xss対策 -->
 	<p>正常に登録されました</p>
 	<div>
 		<a href="menu.jsp">メニューに戻る</a>

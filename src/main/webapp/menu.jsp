@@ -11,7 +11,7 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-	<p>${sessionScope.userName}さん、こんにちは</p>
+	<p>${sessionScope.loginName}さん、こんにちは</p>
 
 
 	<c:choose>
