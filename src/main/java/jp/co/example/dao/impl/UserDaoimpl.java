@@ -20,3 +20,4 @@ public class UserDaoimpl implements UserDao {
 		return jdbcTemplate.query("SELECT name, price FROM products",new BeanPropertyRowMapper<User>(User.class));
 	}
 }
+ 

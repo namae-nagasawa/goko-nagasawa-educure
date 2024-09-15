@@ -7,3 +7,4 @@ import jp.co.example.entity.User;
 public interface UserDao {
 public List<User> findAll();
 }
+ 

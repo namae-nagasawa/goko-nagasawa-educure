@@ -8,3 +8,4 @@ public interface UserService {
 
 	public List<User> findAll();
 }
+ 
