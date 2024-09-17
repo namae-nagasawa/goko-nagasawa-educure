@@ -14,10 +14,17 @@ public class UserServiceimpl implements UserService {
 
 	@Autowired
 	private UserDao userDao;
-	
-	public List<User> findAll(){
+
+	public List<User> findAll() {
 		return userDao.findAll();
 	}
-	
+
+	public List<User> search(String name, int price) {
+		return userDao.search(name, price);
+	}
+
+	public int register(String name, int price) {
+		return userDao.register(name, price);
+	}
+
 }
- 

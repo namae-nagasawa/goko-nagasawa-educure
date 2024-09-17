@@ -8,5 +8,11 @@
 </head>
 <body>
 
+	<h2>登録が完了しました</h2>
+	<br>
+	<div>
+		<a href="/index">戻る</a>
+	</div>
+
 </body>
 </html> 
