@@ -4,26 +4,25 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class UserForm {
-	@NotBlank
-	@NotNull
-	private String name;
-	@NotBlank
-	@NotNull
-	private Integer price;
+    @NotBlank
+    private String userName;
 
-	public String getName() {
-		return name;
-	}
+    @NotNull
+    private Integer userPrice;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public Integer getPrice() {
-		return price;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public void setPrice(Integer price) {
-		this.price = price;
-	}
+    public Integer getUserPrice() {
+        return userPrice;
+    }
+
+    public void setUserPrice(Integer userPrice) {
+        this.userPrice = userPrice;
+    }
 }

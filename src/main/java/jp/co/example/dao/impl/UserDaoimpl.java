@@ -19,7 +19,7 @@ public class UserDaoimpl implements UserDao {
 	
 	private final String SELECT="SELECT id,name, price FROM products";
 	private final String SELECT_NAME_PRICE="SELECT id,name,price FROM products WHERE name = :userName OR price= :userPrice";
-	private final String INSERT="INSERT INTO products(name, price) VALUES (nextval('products_seq'), :userName, :userPrice)";
+	private final String INSERT="INSERT INTO products(id,name, price) VALUES (nextval('products_seq'), :userName, :userPrice)";
 
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
@@ -45,9 +45,9 @@ public class UserDaoimpl implements UserDao {
 		
 		 MapSqlParameterSource param = new MapSqlParameterSource();//自分で挿入したいデータを指定する場合
 	       
-//	        param.addValue("userName", userName);   //%を使うとき（ワイルドカード）にaddValueを使うことが多い
-//	        param.addValue("userPrice", userPrice);
-	        
+		 	param.addValue("userName", form.getUserName());
+		    param.addValue("userPrice", form.getUserPrice());//%を使うとき（ワイルドカード）にaddValueを使うことが多い
+		 
 	        return jdbcTemplate.update(sql, param); 
 		
 	}

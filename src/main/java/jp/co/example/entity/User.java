@@ -15,27 +15,27 @@ public class User {
 		this.userPrice = price;
 	}
 
-	public int getId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setId(Integer userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
-	public String getName() {
+	public String getUserName() {
 		return userName;
 	}
 
-	public void setName(String userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
-	public Integer getPrice() {
+	public Integer getUserPrice() {
 		return userPrice;
 	}
 
-	public void setPrice(Integer userPrice) {
+	public void setUserPrice(Integer userPrice) {
 		this.userPrice = userPrice;
 	}
 

@@ -33,19 +33,19 @@ public class UserController {
 	public String search(@Validated @ModelAttribute("select") UserForm form, BindingResult bindingResult, Model model) {
 		List<User> list = new ArrayList<>();//あらかじめリストを作っておく、のちに更新するため
 
-		String name = form.getName();
-		Integer price = form.getPrice();
-		if (name.isEmpty() && price == 0) {//name,price両方null(データがない)場合に
+		String userName = form.getUserName();
+		Integer userPrice = form.getUserPrice();
+		if (userName.isEmpty() && userPrice == 0) {//name,price両方null(データがない)場合に
 
 			list = userService.findAll();//全件取得
 			model.addAttribute("resultList", list);
-		} else if (price != 0) {//nameはnullでもnullじゃなくてもよくて、priceに何かしらデータが入っているとき
+		} else if (userPrice != 0) {//nameはnullでもnullじゃなくてもよくて、priceに何かしらデータが入っているとき
 
 		
 			list = userService.search(form);
 			model.addAttribute("resultList", list);
 
-		} else if (price ==0) {//priceにデータが入っていないとき
+		} else if (userPrice ==0) {//priceにデータが入っていないとき
 
 			list = userService.search(form);
 			model.addAttribute("resultList", list);//左側は引用するときに使う一次的な名前で右側は内容物

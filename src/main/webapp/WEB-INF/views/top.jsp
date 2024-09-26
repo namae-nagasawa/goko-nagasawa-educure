@@ -13,22 +13,22 @@
 <body>
 	<form:form action="result" modelAttribute="index" method="post">
 		<div>
-			<fmt:message key="form.lbl.name" />
-			<form:input path="name" />
-			<form:errors path="name" cssStyle="color:red" />
+			<fmt:message key="form.lbl.userName" />
+			<form:input path="userName" />
+			<form:errors path="userName" cssStyle="color:red" />
 		</div>
 		<div>
-			<fmt:message key="form.lbl.price" />
-			<form:input path="price" />
-			<form:errors path="price" cssStyle="color:red" />
+			<fmt:message key="form.lbl.userPrice" />
+			<form:input path="userPrice" />
+			<form:errors path="userPrice" cssStyle="color:red" />
 		</div>
 		<div>
-			<button type="submit">
+			<button name="select" type="submit">
 				<fmt:message key="form.lbl.select" />
 			</button>
 		</div>
 		<div>
-			<button type="submit">
+			<button name="insert" type="submit">
 				<fmt:message key="form.lbl.insert" />
 			</button>
 		</div>
