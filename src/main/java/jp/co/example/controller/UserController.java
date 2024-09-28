@@ -36,25 +36,45 @@ public class UserController {
 		String userName = form.getUserName();
 		Integer userPrice = form.getUserPrice();
 
-		if ((userName == null || userName.isEmpty()) && (userPrice == null || userPrice == 0)) {//name,price両方null(データがない)場合に
-
-			resultList = userService.findAll();//全件取得
+		if ((userName.equals("")) && (userPrice ==null)) {
+			resultList = userService.findAll();
 			model.addAttribute("resultList", resultList);
-			System.out.println(resultList);
-
-		} else if ((userPrice == null || userPrice == 0) && (!userName.isEmpty() || userName != null)) {
-			resultList = userService.search2(form);
-			model.addAttribute("resultList", resultList);
-		} else if ((userPrice != 0 || userPrice != null) && (userName.isEmpty() || userName == null)) {
-			resultList = userService.search2(form);
-			model.addAttribute("resultList", resultList);
-		} else if ((!userName.isEmpty() || userName != null) && (userPrice != 0 || userPrice != null)) {
-
-			resultList = userService.search(form);
-			model.addAttribute("resultList", resultList);//左側は引用するときに使う一時的な名前で右側は内容物
-			System.out.println(resultList);
-
 		}
+
+		else if ((userName.isEmpty() || userName == null) && (userPrice != 0 || userPrice != null)) {
+			resultList = userService.findPrice(form);
+			model.addAttribute("resultList", resultList);
+		}
+
+		else if ((!userName.isEmpty() || userName != null) && (userPrice == null||userPrice == 0 )) {
+			resultList = userService.findName(form);
+			model.addAttribute("resultList", resultList);
+		}
+
+		else if ((!userName.isEmpty() || userName != null) && (userPrice != 0 || userPrice != null)) {
+			resultList = userService.findNameAndPrice(form);
+			model.addAttribute("resultList", resultList);
+		}
+
+		//		if ((userName == null || userName.isEmpty()) && (userPrice == null || userPrice == 0)) {//name,price両方null(データがない)場合に
+		//
+		//			resultList = userService.findAll();//全件取得
+		//			model.addAttribute("resultList", resultList);
+		//			System.out.println(resultList);
+		//
+		//		} else if ((userPrice == null || userPrice == 0) && (!userName.isEmpty() || userName != null)) {
+		//			resultList = userService.search2(form);
+		//			model.addAttribute("resultList", resultList);
+		//		} else if ((userPrice != 0 || userPrice != null) && (userName.isEmpty() || userName == null)) {
+		//			resultList = userService.search2(form);
+		//			model.addAttribute("resultList", resultList);
+		//		} else if ((!userName.isEmpty() || userName != null) && (userPrice != 0 || userPrice != null)) {
+		//
+		//			resultList = userService.search(form);
+		//			model.addAttribute("resultList", resultList);//左側は引用するときに使う一時的な名前で右側は内容物
+		//			System.out.println(resultList);
+		//
+		//		}
 		return "searchResult";
 	}
 

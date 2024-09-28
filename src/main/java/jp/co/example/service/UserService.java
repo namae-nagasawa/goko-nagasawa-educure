@@ -9,9 +9,12 @@ public interface UserService {
 
 	public List<User> findAll();
 
-	public List<User> search(UserForm form);
+	public List<User> findNameAndPrice(UserForm form) ;
 	
-	public List<User> search2(UserForm form);
+	public List<User> findName(UserForm form);
+	
+	public List<User> findPrice(UserForm form);
+	
 
 	public int insert(UserForm form);
 

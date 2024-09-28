@@ -22,13 +22,20 @@ public class UserServiceimpl implements UserService {
 		return userDao.findAll();
 	}
 
-	public List<User> search(UserForm form) {
-		return userDao.search(form);
+	public List<User> findNameAndPrice(UserForm form) {
+		return userDao.findNameAndPrice(form);
 	}
-	public List<User> search2(UserForm form) {
-		return userDao.search(form);
+	
+	public List<User> findName(UserForm form){
+		return userDao.findName(form);
 	}
-
+	
+	public List<User> findPrice(UserForm form){
+		return userDao.findPrice(form);
+	}
+	
+	
+	
 	public int insert(UserForm form) {
 		return userDao.insert(form);
 	}
