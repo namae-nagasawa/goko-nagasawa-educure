@@ -30,25 +30,24 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/result", params = "select", method = RequestMethod.POST)
-	public String search(@Validated @ModelAttribute("select") UserForm form, BindingResult bindingResult, Model model) {
-		List<User> list = new ArrayList<>();//あらかじめリストを作っておく、のちに更新するため
+	public String search(UserForm form, Model model) {//空でもいいからvalodatedはなしで
+		List<User> resultList = new ArrayList<>();//あらかじめリストを作っておく、のちに更新するため
 
 		String userName = form.getUserName();
 		Integer userPrice = form.getUserPrice();
-		if (userName.isEmpty() && userPrice == 0) {//name,price両方null(データがない)場合に
 
-			list = userService.findAll();//全件取得
-			model.addAttribute("resultList", list);
-		} else if (userPrice != 0) {//nameはnullでもnullじゃなくてもよくて、priceに何かしらデータが入っているとき
+		if ((userName == null || userName.isEmpty()) && (userPrice == null || userPrice == 0)) {//name,price両方null(データがない)場合に
 
-		
-			list = userService.search(form);
-			model.addAttribute("resultList", list);
+			resultList = userService.findAll();//全件取得
+			model.addAttribute("resultList", resultList);
+			System.out.println(resultList);
+			
+		} else {
 
-		} else if (userPrice ==0) {//priceにデータが入っていないとき
-
-			list = userService.search(form);
-			model.addAttribute("resultList", list);//左側は引用するときに使う一次的な名前で右側は内容物
+			resultList = userService.search(form);
+			//左側は引用するときに使う一次的な名前で右側は内容物
+			model.addAttribute("resultList", resultList);
+			System.out.println(resultList);
 
 		}
 		return "searchResult";
@@ -56,7 +55,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/result", params = "insert", method = RequestMethod.POST)
-	public String insert(@Validated @ModelAttribute("insert") UserForm form, BindingResult bindingResult, Model model) {
+	public String insert(@Validated @ModelAttribute("index") UserForm form, BindingResult bindingResult, Model model) {
 
 		if (bindingResult.hasErrors()) {
 			return "top";

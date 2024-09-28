@@ -4,10 +4,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 public class UserForm {
-    @NotBlank
+    @NotBlank(message = "{jakarta.validation.constraints.NotBlank.message}")//文字化けするからこれが必要
     private String userName;
 
-    @NotNull
+    @NotNull(message = "{jakarta.validation.constraints.NotNull.message}")
     private Integer userPrice;
 
     public String getUserName() {

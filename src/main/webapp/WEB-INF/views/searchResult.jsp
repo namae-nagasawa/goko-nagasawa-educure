@@ -12,16 +12,16 @@
 <body>
 	<table border="1">
 		<tr>
-			<th><fmt:message key="form.lbl.id" /></th>
-			<th><fmt:message key="form.lbl.name" /></th>
-			<th><fmt:message key="form.lbl.price" /></th>
+			<th><fmt:message key="form.lbl.userId" /></th>
+			<th><fmt:message key="result.lbl.userName" /></th>
+			<th><fmt:message key="result.lbl.userPrice" /></th>
 		</tr>
 
-		<c:forEach var="product" items="${resultList}">
+		<c:forEach var="user" items="${resultList}">
 			<tr>
-				<td>${fn:escapeXml(product.userId)}</td>
-				<td>${fn:escapeXml(product.userName)}</td>
-				<td>${fn:escapeXml(product.userPrice)}</td>
+				<td>${fn:escapeXml(user.id)}</td>
+				<td>${fn:escapeXml(user.name)}</td>
+				<td>${fn:escapeXml(user.price)}</td>
 			</tr>
 		</c:forEach>
 		<br>

@@ -18,7 +18,7 @@ import jp.co.example.entity.User;
 public class UserDaoimpl implements UserDao {
 	
 	private final String SELECT="SELECT id,name, price FROM products";
-	private final String SELECT_NAME_PRICE="SELECT id,name,price FROM products WHERE name = :userName OR price= :userPrice";
+	private final String SELECT_NAME_PRICE="SELECT id,name,price FROM products WHERE name = :userName AND price= :userPrice";
 	private final String INSERT="INSERT INTO products(id,name, price) VALUES (nextval('products_seq'), :userName, :userPrice)";
 
 	@Autowired
@@ -29,14 +29,14 @@ public class UserDaoimpl implements UserDao {
 	public List<User> findAll() {
 		String sql =SELECT;
 	    
-        return jdbcTemplate1.query(sql, new BeanPropertyRowMapper<User>(User.class));//ここqueryのほうがいい？
+        return jdbcTemplate1.query(sql, new BeanPropertyRowMapper<User>(User.class));
 	}
 	
 	public List<User> search(UserForm form) {
 		String sql=SELECT_NAME_PRICE;
-        BeanPropertySqlParameterSource parameterSource =new BeanPropertySqlParameterSource(form); //formを使うことによってで自動でデータを入れてくれる。
+        BeanPropertySqlParameterSource parameterSource =new BeanPropertySqlParameterSource(form); //formを使うことによってで自動でデータを入れてくれる。入力したnameもpriceも
        
-        return jdbcTemplate.query(sql, parameterSource,new BeanPropertyRowMapper<User>(User.class));//ここもquery?
+        return jdbcTemplate.query(sql, parameterSource,new BeanPropertyRowMapper<User>(User.class));
 		
 	}
 	
@@ -53,4 +53,4 @@ public class UserDaoimpl implements UserDao {
 	}
 	
 }
-//引数sql文、二つ目が自動挿入のもの、（（型変換（SELECT文だけ３つ目がある認識））
+//引数sql文、二つ目が挿入するもの）

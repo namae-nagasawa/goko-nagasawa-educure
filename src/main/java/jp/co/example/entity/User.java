@@ -2,41 +2,47 @@ package jp.co.example.entity;
 
 public class User {
 
-	private String userName;
-	private Integer userPrice;
-	private Integer userId;
+	private Integer id;
+	private String name;
+	private Integer price;
 
+	//entityはカラム名から引っ張ってきた値なので同じにしないといけない
 	public User() {
 
 	}
 
-	public User(String name, Integer price) {
-		this.userName = name;
-		this.userPrice = price;
+	public User(String userName, Integer userPrice) {
+		this.name = userName;
+		this.price = userPrice;
 	}
 
-	public int getUserId() {
-		return userId;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Integer getUserPrice() {
-		return userPrice;
+	public Integer getPrice() {
+		return price;
 	}
 
-	public void setUserPrice(Integer userPrice) {
-		this.userPrice = userPrice;
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", price=" + price + "]";
 	}
 
 }

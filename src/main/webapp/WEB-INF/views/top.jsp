@@ -23,14 +23,14 @@
 			<form:errors path="userPrice" cssStyle="color:red" />
 		</div>
 		<div>
-			<button name="select" type="submit">
+			<form:button name="select">
 				<fmt:message key="form.lbl.select" />
-			</button>
+			</form:button>
 		</div>
 		<div>
-			<button name="insert" type="submit">
+			<form:button name="insert">
 				<fmt:message key="form.lbl.insert" />
-			</button>
+			</form:button>
 		</div>
 	</form:form>
 </body>
