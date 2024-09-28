@@ -41,17 +41,21 @@ public class UserController {
 			resultList = userService.findAll();//全件取得
 			model.addAttribute("resultList", resultList);
 			System.out.println(resultList);
-			
-		} else {
+
+		} else if ((userPrice == null || userPrice == 0) && (!userName.isEmpty() || userName != null)) {
+			resultList = userService.search2(form);
+			model.addAttribute("resultList", resultList);
+		} else if ((userPrice != 0 || userPrice != null) && (userName.isEmpty() || userName == null)) {
+			resultList = userService.search2(form);
+			model.addAttribute("resultList", resultList);
+		} else if ((!userName.isEmpty() || userName != null) && (userPrice != 0 || userPrice != null)) {
 
 			resultList = userService.search(form);
-			//左側は引用するときに使う一次的な名前で右側は内容物
-			model.addAttribute("resultList", resultList);
+			model.addAttribute("resultList", resultList);//左側は引用するときに使う一時的な名前で右側は内容物
 			System.out.println(resultList);
 
 		}
 		return "searchResult";
-
 	}
 
 	@RequestMapping(value = "/result", params = "insert", method = RequestMethod.POST)

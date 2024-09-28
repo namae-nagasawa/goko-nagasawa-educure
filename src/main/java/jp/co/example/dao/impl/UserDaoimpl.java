@@ -18,7 +18,8 @@ import jp.co.example.entity.User;
 public class UserDaoimpl implements UserDao {
 	
 	private final String SELECT="SELECT id,name, price FROM products";
-	private final String SELECT_NAME_PRICE="SELECT id,name,price FROM products WHERE name = :userName AND price= :userPrice";
+	private final String SELECT_NAME_PRICE="SELECT id,name,price FROM products WHERE name = :userName OR price= :userPrice";
+	private final String SELECT_NAME_PRICE_2="SELECT id,name,price FROM products WHERE name = :userName AND  price= :userPrice";
 	private final String INSERT="INSERT INTO products(id,name, price) VALUES (nextval('products_seq'), :userName, :userPrice)";
 
 	@Autowired
@@ -34,6 +35,13 @@ public class UserDaoimpl implements UserDao {
 	
 	public List<User> search(UserForm form) {
 		String sql=SELECT_NAME_PRICE;
+        BeanPropertySqlParameterSource parameterSource =new BeanPropertySqlParameterSource(form); //formを使うことによってで自動でデータを入れてくれる。入力したnameもpriceも
+       
+        return jdbcTemplate.query(sql, parameterSource,new BeanPropertyRowMapper<User>(User.class));
+		
+	}
+	public List<User> search2(UserForm form) {
+		String sql=SELECT_NAME_PRICE_2;
         BeanPropertySqlParameterSource parameterSource =new BeanPropertySqlParameterSource(form); //formを使うことによってで自動でデータを入れてくれる。入力したnameもpriceも
        
         return jdbcTemplate.query(sql, parameterSource,new BeanPropertyRowMapper<User>(User.class));

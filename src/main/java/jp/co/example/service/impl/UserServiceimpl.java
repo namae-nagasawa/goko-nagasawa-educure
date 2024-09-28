@@ -25,6 +25,9 @@ public class UserServiceimpl implements UserService {
 	public List<User> search(UserForm form) {
 		return userDao.search(form);
 	}
+	public List<User> search2(UserForm form) {
+		return userDao.search(form);
+	}
 
 	public int insert(UserForm form) {
 		return userDao.insert(form);
