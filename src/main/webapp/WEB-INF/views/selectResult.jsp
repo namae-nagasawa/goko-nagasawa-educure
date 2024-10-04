@@ -18,20 +18,20 @@
 		<thead>
 			<tr>
 				<th><fmt:message key="form.lbl.loginId" /></th>
-				<th><fmt:message key="form.lbl.name1" /></th>
-				<th><fmt:message key="form.lbl.tel1" /></th>
+				<th><fmt:message key="form.lbl.name" /></th>
+				<th><fmt:message key="form.lbl.telephone" /></th>
 				<th><fmt:message key="form.lbl.grant" /></th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:choose>
 				<c:when test="${not empty resultList}">
-					<c:forEach var="resultList" items="${resultList}">
+					<c:forEach var="r" items="${resultList}">
 						<tr>
-							<td>${login_id}</td>
-							<td>${user_name}</td>
-							<td>${telephone}</td>
-							<td>${role_name}</td>
+							<td>${fn:escapeXml(r.loginId)}</td>
+							<td>${fn:escapeXml(r.userName)}</td>
+							<td>${fn:escapeXml(r.telephone)}</td>
+							<td>${fn:escapeXml(r.roleName)}</td>
 						</tr>
 					</c:forEach>
 				</c:when>

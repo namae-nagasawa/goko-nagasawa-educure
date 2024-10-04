@@ -3,11 +3,12 @@ package jp.co.hoge.web.service;
 import java.util.List;
 
 import jp.co.hoge.web.controller.form.UserForm;
+import jp.co.hoge.web.controller.form.loginForm;
 import jp.co.hoge.web.entity.User;
 
 public interface UserService {
 
-	public List<User> loginIdName(UserForm form);
+	public List<User> loginIdName(loginForm form);
 
 	public List<User> selectNameTel(UserForm form);
 	
@@ -16,4 +17,6 @@ public interface UserService {
 	public List<User> selectTel(UserForm form);
 	
 	public List<User> selectAll();
+	
+	public List<User> selectRole();
 }

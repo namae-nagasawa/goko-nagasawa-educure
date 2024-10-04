@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import jp.co.hoge.web.controller.form.UserForm;
+import jp.co.hoge.web.controller.form.loginForm;
 import jp.co.hoge.web.dao.UserDao;
 import jp.co.hoge.web.entity.User;
 
@@ -26,12 +27,17 @@ public class UserDaoimpl implements UserDao {
 	private static final String SQL_TEL = "SELECT user_info.login_id, user_info.password, user_info.user_id, user_info.user_name, user_info.telephone, role.role_name FROM user_info LEFT JOIN role ON user_info.role_id=role.role_id WHERE user_info.telephone= :telephone";
 	
 	private static final String SQL_SELECT_ALL = "SELECT user_info.user_id, user_info.login_id, user_info.user_name, user_info.telephone, user_info.password, role.role_name FROM user_info LEFT JOIN role ON user_info.role_id = role.role_id";
+	
+	private static final String SQL_ROLE = "SELECT * FROM role";
+	
+	
+	
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 	@Autowired
 	private JdbcTemplate jdbcTemplate1;
 
-	public List<User> loginIdName(UserForm form) {
+	public List<User> loginIdName(loginForm form) {
 		List<User> resultList = new ArrayList<>();
 		String sql = SQL_LOGIN;
 		MapSqlParameterSource param = new MapSqlParameterSource();
@@ -81,5 +87,10 @@ public class UserDaoimpl implements UserDao {
 		
 		return jdbcTemplate1.query(sql, new BeanPropertyRowMapper<User>(User.class));
 	}
-	
+	public List<User> selectRole(){
+		String sql=SQL_ROLE;
+		
+		return jdbcTemplate1.query(sql, new BeanPropertyRowMapper<User>(User.class));
+		
+	}
 }

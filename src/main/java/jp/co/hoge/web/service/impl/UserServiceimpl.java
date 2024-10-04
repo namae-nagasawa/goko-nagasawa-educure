@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.hoge.web.controller.form.UserForm;
+import jp.co.hoge.web.controller.form.loginForm;
 import jp.co.hoge.web.entity.User;
 import jp.co.hoge.web.service.UserService;
 
@@ -17,7 +18,7 @@ public class UserServiceimpl implements UserService {
 	@Autowired
 	private jp.co.hoge.web.dao.UserDao userDao;
 
-	public List<User> loginIdName(UserForm form) {
+	public List<User> loginIdName(loginForm form) {
 		return userDao.loginIdName(form);
 	}
 
@@ -33,4 +34,8 @@ public class UserServiceimpl implements UserService {
 	public List<User> selectAll(){
 		return userDao.selectAll();
 	}
+	public List<User> selectRole(){
+		return userDao.selectRole();
+	}
+	
 }

@@ -8,38 +8,44 @@ public class UserForm {
 	private String loginId;
 	 @NotBlank
 	 private String password;
-	
-
-	
+	@NotBlank
+	 private String name;
+	@NotBlank
+	 private String telephone;
 	 
-	 private Integer roleId;
+
+
+	private Integer roleId;
 	
 	 private String select;
 	 
 	 private String insert;
-	 
-	 private String name1;
-	 
-	 private String tel1;
-	 
 	
-	 
-	 
+	 private String roleName;
 	
-	 public String getUserName() {
-		return name1;
+	
+	 public String getRoleName() {
+		return roleName;
 	}
 
-	public void setUserName(String name1) {
-		this.name1 = name1;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public String getUserName() {
+		return name;
+	}
+
+	public void setUserName(String name) {
+		this.name = name;
 	}
 
 	public String getTelephone() {
-		return tel1;
+		return telephone;
 	}
 
-	public void setTelephone(String tel1) {
-		this.tel1 = tel1;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 	public Integer getRoleId() {
@@ -54,28 +60,14 @@ public class UserForm {
 	 
 
 	public String getName() {
-		return name1;
+		return name;
 	}
 
-	public String getName1() {
-		return name1;
+	
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public void setName1(String name1) {
-		this.name1 = name1;
-	}
-
-	public String getTel1() {
-		return tel1;
-	}
-
-	public void setTel1(String tel1) {
-		this.tel1 = tel1;
-	}
-
-	public void setName(String name1) {
-		this.name1 = name1;
-	}
+	
 
 	public String getSelect() {
 		return select;

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import jp.co.hoge.web.controller.form.UserForm;
+import jp.co.hoge.web.controller.form.loginForm;
 import jp.co.hoge.web.entity.User;
 import jp.co.hoge.web.service.UserService;
 
@@ -42,9 +43,10 @@ public class AuthController {
 	
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String loginIdName(@Validated @ModelAttribute("login") UserForm form,BindingResult bindingResult, Model model,HttpSession session) {
+	public String loginIdName(@Validated @ModelAttribute("login") loginForm form,BindingResult bindingResult, Model model,HttpSession session) {
 		List<User> resultList =new ArrayList<>();
 		resultList=userService.loginIdName(form);
+		//String roleIdname;
 
 		if (bindingResult.hasErrors()) {
 			return "login";
@@ -56,15 +58,18 @@ public class AuthController {
 		if(!resultList.isEmpty()) {
 			resultList=userService.loginIdName(form);
 			
+			
 		
 			User user= resultList.get(0);
-			
-			
+			String[] roleIdname = {"管理者", "一般"};
+
 			
 			model.addAttribute("resultList", resultList);
+			session.setAttribute("roleIdname", roleIdname);
 			session.setAttribute("role_id",user.getRoleId());
 			session.setAttribute("user_name",user.getUserName());
 			
+			 
 			
 		}
 		

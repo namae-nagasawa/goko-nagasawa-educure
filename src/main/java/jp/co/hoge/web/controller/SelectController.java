@@ -24,24 +24,24 @@ public class SelectController {
 	HttpSession session;
 
 	@RequestMapping(value = "/select", method = RequestMethod.GET)
-	public String select(@ModelAttribute("select") UserForm form, Model model, HttpSession session) {
+	public String select(@ModelAttribute("select") UserForm form, Model model) {
 
 		return "select";
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String selectNameTel(@ModelAttribute("select") UserForm form, Model model, HttpServletRequest request,HttpSession session) {
+	public String selectNameTel(@ModelAttribute("select") UserForm form, Model model, HttpServletRequest request,
+			HttpSession session) {
 
 		String userName = form.getUserName();
-		String tel1 = form.getTel1();
+		String tel1 = form.getTelephone();
+
+		List<User> resultList;
 		
 
-		List<User> resultList = null;
-		//resultList = userService.selectNameTel(form);
-
 		if ((userName == null || userName.isEmpty()) && (tel1 == null || tel1.isEmpty())) {
-			
-			resultList=userService.selectAll();
+
+			resultList = userService.selectAll();
 
 		} else if (tel1 == null || tel1.isEmpty()) {
 
@@ -49,33 +49,23 @@ public class SelectController {
 
 		} else if (userName == null || userName.isEmpty()) {
 
-			resultList=userService.selectTel(form);
-			
+			resultList = userService.selectTel(form);
+
 		} else {
-			
+
 			resultList = userService.selectNameTel(form);
 		}
 
-		
-		
 		if (resultList != null && !resultList.isEmpty()) {
-			  for (User user : resultList) {
-			//User user = resultList.get(0);
-
-			
 			model.addAttribute("resultList", resultList);
-			model.addAttribute("login_id", user.getLoginId());
-			model.addAttribute("telephone", user.getTelephone());
-			model.addAttribute("role_name", user.getRoleName());
-			request.setAttribute("user_name",user.getUserName());
-			//session.setAttribute("user_name", user.getUserName());
-			//model.addAttribute("user_name", user.getUserName());
-			  }
-		} else {
-
-			model.addAttribute("msg4", "入力されたデータはありません");
-			return "select";
 		}
+
+		else {
+			request.setAttribute("msg4", "入力されたデータはありません");
+			return "select";
+			
+		}
+		
 		return "selectResult";
 
 	}

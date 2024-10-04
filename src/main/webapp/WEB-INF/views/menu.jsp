@@ -30,7 +30,7 @@
 			</p>
 
 			<p>
-				<form:form action="insert" modelAttribute="select">
+				<form:form action="insert" modelAttribute="insert">
 					<div>
 						<a href="insert"><fmt:message key="form.lbl.insert1" /></a>
 						

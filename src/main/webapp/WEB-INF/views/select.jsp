@@ -23,13 +23,13 @@
 		<br>
 	<form:form action="list" method="get" modelAttribute="select">
 		<div>
-			<fmt:message key="form.lbl.name1"/>
-			<form:input path="name1" />
+			<fmt:message key="form.lbl.name"/>
+			<form:input path="name" />
 		
 		</div>
 		<div>
-			<fmt:message key="form.lbl.tel1"/>
-			<form:input path="tel1" />
+			<fmt:message key="form.lbl.telephone"/>
+			<form:input path="telephone" />
 		
 		</div>
 		<div>

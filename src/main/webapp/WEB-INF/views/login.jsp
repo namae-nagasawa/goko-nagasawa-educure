@@ -25,7 +25,7 @@
 		<div>
 			<fmt:message key="form.lbl.loginId"/>
 			<form:input path="loginId" />
-			<form:errors path="loginId" cssStyle="color:red" />
+			<form:errors path="loginId" cssStyle="color:red" /><!-- pathは紐付けたいformのフィールド名と合わせる -->
 		</div>
 		<div>
 			<fmt:message key="form.lbl.password"/>
