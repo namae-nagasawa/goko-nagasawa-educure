@@ -22,20 +22,31 @@ public class UserServiceimpl implements UserService {
 		return userDao.loginIdName(form);
 	}
 
-	public List<User> selectNameTel(UserForm form){
+	public List<User> selectNameTel(UserForm form) {
 		return userDao.selectNameTel(form);
 	}
-	public List<User> selectName(UserForm form){
+
+	public List<User> selectName(UserForm form) {
 		return userDao.selectName(form);
 	}
-	public List<User> selectTel(UserForm form){
+
+	public List<User> selectTel(UserForm form) {
 		return userDao.selectTel(form);
 	}
-	public List<User> selectAll(){
+
+	public List<User> selectAll() {
 		return userDao.selectAll();
 	}
-	public List<User> selectRole(){
+
+	public List<User> selectRole() {
 		return userDao.selectRole();
 	}
-	
+
+	public List<User> selectId(UserForm form) {
+		return userDao.selectId(form);
+
+	}
+	public int insert(UserForm form){
+		return userDao.insert(form);
+	}
 }

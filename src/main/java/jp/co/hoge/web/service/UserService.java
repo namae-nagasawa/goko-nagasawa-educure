@@ -19,4 +19,8 @@ public interface UserService {
 	public List<User> selectAll();
 	
 	public List<User> selectRole();
+	
+	public List<User> selectId(UserForm form);
+	
+	public int insert(UserForm form);
 }

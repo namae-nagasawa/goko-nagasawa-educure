@@ -21,10 +21,7 @@ public class IndexController {
 	}
 	@RequestMapping(value="/menu",method=RequestMethod.GET)
 	public String menu(@ModelAttribute("login") loginForm form, Model model) {
-		
 
-		
-		//menuに戻る際、○○さんこんにちはを残すためにはやっぱりセッションスコープに保存する必要がある？
 		
 		return "menu";
 	}

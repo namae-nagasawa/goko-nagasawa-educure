@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,40 +13,52 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-	<p>これでよろしいですか？</p>
+	<p>
+		<fmt:message key="form.lbl.kakuninn" />
+	</p>
 
 	<p class="error">${sessionScope.errorPass}</p>
 
 	<form action="insertConfirm" method="post">
-		<fieldset class="label-130">
+		<fieldset claass="label-130">
 			<div>
-				<label>ID</label> <input type="text" name="loginId"
-					value="${sessionScope.loginId}" readonly>
-			</div>
-			<div>
-				<label>名前</label> <input type="text" name="userName"
-					value="${sessionScope.userName}" readonly>
-			</div>
-			<div>
-				<label>TEL</label> <input type="text" name="tel"
-					value="${sessionScope.tel}" readonly>
-			</div>
-			<div>
-				<label>権限</label> <input type="text" name="roleName"
-					value="${sessionScope.roleIdname}" readonly>
+				<fmt:message key="form.lbl.loginId" />
+				<input type="text" name="loginId" value="${loginId}" readonly>
 
 			</div>
 			<div>
-				<label>PASS（再入力）</label> <input type="password" name="rePass">
+				<fmt:message key="form.lbl.name" />
+				<input type="text" name="userName" value="${userName}" readonly>
+
+			</div>
+			<div>
+				<fmt:message key="form.lbl.telephone" />
+				<input type="text" name="telephone" value="${telephone}" readonly>
+
+			</div>
+			<div>
+				<fmt:message key="form.lbl.grant" />
+				<input type="text" name="roleId" value="${sessionScope.posi}" readonly>
+
+			</div>
+			<div>
+				<fmt:message key="form.lbl.repass" />
+				<input type="password" name="rePass">
 			</div>
 		</fieldset>
 		<div>
-			<button type="submit">登録</button>
-			<button type="button" onclick="location.href='insert.jsp';">戻る</button>
+			<button type="submit">
+				<fmt:message key="form.lbl.insert1" />
+			</button>
+			<button type="submit" formaction="insert">
+				<!-- コントローラーのメソッド名と連携しているform.actionの部分 -->
+				<fmt:message key="form.lbl.back" />
+			</button>
 		</div>
 	</form>
 	<div>
-		<a href="menu.jsp">メニューに戻る</a>
+		<br> <a href="menu"><fmt:message key="form.lbl.menuseni" /></a>
 	</div>
+
 </body>
 </html>

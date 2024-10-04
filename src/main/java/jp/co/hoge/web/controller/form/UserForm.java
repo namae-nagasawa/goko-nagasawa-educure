@@ -12,16 +12,25 @@ public class UserForm {
 	 private String name;
 	@NotBlank
 	 private String telephone;
-	 
-
-
+	
 	private Integer roleId;
 	
-	 private String select;
-	 
-	 private String insert;
+	private String select;
 	
-	 private String roleName;
+	private String insert;
+	
+	private String roleName;
+	 
+	private String rePass;
+
+
+	public String getRePass() {
+		return rePass;
+	}
+
+	public void setRePass(String rePass) {
+		this.rePass = rePass;
+	}
 	
 	
 	 public String getRoleName() {

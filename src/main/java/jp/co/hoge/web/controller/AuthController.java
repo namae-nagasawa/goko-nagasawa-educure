@@ -61,13 +61,17 @@ public class AuthController {
 			
 		
 			User user= resultList.get(0);
-			String[] roleIdname = {"管理者", "一般"};
+			
 
 			
-			model.addAttribute("resultList", resultList);
-			session.setAttribute("roleIdname", roleIdname);
+			//model.addAttribute("resultList", resultList);
 			session.setAttribute("role_id",user.getRoleId());
 			session.setAttribute("user_name",user.getUserName());
+			
+			List<User> roles = userService.selectRole(); // 役割のリストを取得
+			session.setAttribute("roles", roles);
+
+			
 			
 			 
 			
