@@ -17,9 +17,9 @@
 		<fmt:message key="form.lbl.kakuninn" />
 	</p>
 
-	<p class="error">${sessionScope.errorPass}</p>
+	<p class="error">${msg9}</p>
 
-	<form action="insertConfirm" method="post">
+	<form action="insertConfirm" method="post" modelAttribute="insertConfirm">
 		<fieldset claass="label-130">
 			<div>
 				<fmt:message key="form.lbl.loginId" />
@@ -38,12 +38,19 @@
 			</div>
 			<div>
 				<fmt:message key="form.lbl.grant" />
-				<input type="text" name="roleId" value="${sessionScope.posi}" readonly>
 
+				<c:choose>
+					<c:when test="${roleId == 1}">
+						<input type="text" value="管理者" readonly>
+					</c:when>
+					<c:otherwise>
+						<input type="text" value="一般" readonly>
+					</c:otherwise>
+					</c:choose>
 			</div>
 			<div>
 				<fmt:message key="form.lbl.repass" />
-				<input type="password" name="rePass">
+				<input type="password" name="password">
 			</div>
 		</fieldset>
 		<div>

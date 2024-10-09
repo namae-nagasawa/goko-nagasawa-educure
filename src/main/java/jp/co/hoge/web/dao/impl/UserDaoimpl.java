@@ -26,14 +26,13 @@ public class UserDaoimpl implements UserDao {
 
 	private static final String SQL_TEL = "SELECT user_info.login_id, user_info.password, user_info.user_id, user_info.user_name, user_info.telephone, role.role_name FROM user_info LEFT JOIN role ON user_info.role_id=role.role_id WHERE user_info.telephone= :telephone";
 
-	private static final String SQL_SELECT_ALL = "SELECT user_info.user_id, user_info.login_id, user_info.user_name, user_info.telephone, user_info.password, role.role_name FROM user_info LEFT JOIN role ON user_info.role_id = role.role_id";
+	private static final String SQL_SELECT_ALL = "SELECT user_info.user_id, user_info.login_id, user_info.user_name, user_info.telephone, user_info.password, role.role_name FROM user_info LEFT JOIN role ON user_info.role_id = role.role_id ORDER BY user_info.user_id ASC";
 
 	private static final String SQL_ROLE = "SELECT * FROM role";
 
 	private static final String SQL_SELECT_ID = "SELECT * FROM user_info WHERE login_id = :loginId";
 
 	private static final String SQL_INSERT = "INSERT INTO user_info (login_id, user_name, telephone, role_id, password) VALUES (:loginId, :userName, :telephone, :roleId, :password)";
-
 
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
@@ -113,19 +112,17 @@ public class UserDaoimpl implements UserDao {
 	}
 
 	public int insert(UserForm form) {
-		
+
 		String sql = SQL_INSERT;
-		
+
 		MapSqlParameterSource param = new MapSqlParameterSource();//自分で挿入したいデータを指定する場合
 
-		param.addValue("loginId",form.getLoginId());
-		param.addValue("userName",form.getUserName());
-		param.addValue("telephone",form.getTelephone());
-		param.addValue("roleId",form.getRoleId());
-		param.addValue("password",form.getPassword());
-		
-		
-		
+		param.addValue("loginId", form.getLoginId());
+		param.addValue("userName", form.getUserName());
+		param.addValue("telephone", form.getTelephone());
+		param.addValue("roleId", form.getRoleId());
+		param.addValue("password", form.getPassword());
+
 		return jdbcTemplate.update(sql, param);
 	}
 }

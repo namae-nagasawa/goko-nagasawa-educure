@@ -23,7 +23,6 @@ public class InsertController {
 
 	@Autowired
 	private UserService userService;
-	
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public String insert(@ModelAttribute("insert") UserForm form, Model model, HttpSession session,
@@ -38,11 +37,10 @@ public class InsertController {
 	public String insertDate(@Validated @ModelAttribute("insert") UserForm form, BindingResult bindingResult,
 			Model model, HttpSession session, HttpSession request) {
 		List<User> resultList2 = new ArrayList<>();
-		
+
 		resultList2 = userService.selectId(form);
-		
-		
-			if (!resultList2.isEmpty()) {
+
+		if (!resultList2.isEmpty()) {
 			model.addAttribute("msg6", "IDが重複しています");
 			return "insert";
 		}
@@ -50,39 +48,32 @@ public class InsertController {
 		if (bindingResult.hasErrors()) {
 			return "insert";
 		}
-//		String posi=null;
-//		if(form.getRoleId()==1) {
-//			 session.setAttribute("posi","管理者");
-//		}else {
-//			session.setAttribute("posi","一般");
-//		}
-		
 
-		if(form.getRoleId()==1) {
-			session.setAttribute("posi","管理者");
-		}else {
-			session.setAttribute("posi","一般");
-		}
-		//model.addAttribute("resultList2",resultList2);
-	
-		model.addAttribute("loginId", form.getLoginId());
-		model.addAttribute("userName", form.getName());
-		model.addAttribute("telephone", form.getTelephone());
-		model.addAttribute("roleId", form.getRoleId());//管理者か一般が送られてきているのにIntegerのRoleIdをmodelで扱おうとしているから？
-		model.addAttribute("password", form.getPassword());
-		
+		session.setAttribute("loginId", form.getLoginId());
+		session.setAttribute("userName", form.getName());
+		session.setAttribute("telephone", form.getTelephone());
+		session.setAttribute("roleId", form.getRoleId());
+		session.setAttribute("password", form.getPassword());
 
 		return "insertConfirm";
 
 	}
 
 	@RequestMapping(value = "/insertConfirm", method = RequestMethod.POST)
-	public String insertConfirm(@ModelAttribute("insertConfirm") UserForm form, Model model) {
-		if (form.getRePass() == null || !form.getRePass().equals(form.getRePass())) {
-			model.addAttribute("msg9", "前画面で入力したパスワードと一致しません");
+	public String insertConfirm(@ModelAttribute("insertConfirm") UserForm form, Model model, HttpSession session) {
+		
+		String pass = (String) session.getAttribute("password");
+		Integer id = (Integer) session.getAttribute("roleId");
+
+		if (!pass.equals(form.getPassword())) {
+			model.addAttribute("msg9", "前画面で入力したPASSと一致しません");
 			return "insertConfirm";
 		}
+		if (id != null) {
+			form.setRoleId(id); // sessionに格納されているroleIdをformクラスのセッターに入れられることで適用できる
+		}
 		userService.insert(form);
+
 		model.addAttribute("msg8", "登録が完了しました");
 		return "insertResult";
 	}

@@ -25,8 +25,8 @@
 		<div>
 			<fmt:message key="form.lbl.name"/>
 			<form:input path="name" />
-		
 		</div>
+		
 		<div>
 			<fmt:message key="form.lbl.telephone"/>
 			<form:input path="telephone" />

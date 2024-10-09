@@ -12,7 +12,7 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-	<p>実行者：${sessionScope.user_name}</p><!-- xss対策 -->
+	<p><fmt:message key="form.lbl.doyer" />${sessionScope.user_name}</p><!-- xss対策 -->
 	<p>${msg8}</p>
 	<div>
 		<br> <a href="menu"><fmt:message key="form.lbl.menuseni" /></a>
